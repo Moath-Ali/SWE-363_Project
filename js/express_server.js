@@ -9,7 +9,7 @@ app.use(express.static(__dirname.substring(0,__dirname.length-2) + ''));
 
 
 app.get("/",(req,res)=>{
-    res.render("index",{datas:"data"})
+    res.render("index",{datas:"<em>this is something</em>"})
 })
 
 app.get("/modules",(req,res)=>{
@@ -17,6 +17,10 @@ app.get("/modules",(req,res)=>{
 })
 
 app.get("/modules/:path",(req,res)=>{
+    //get the path name from params
+    //get the article from the database using its name
+    //render the article
+    console.log(req.params)
     res.render("path",{datas:"data"})
 })
 
@@ -51,6 +55,6 @@ app.get("*/",(req,res)=>{
 
 
 
-app.listen(9000, ()=>{
+app.listen(3000, ()=>{
     console.log("HERE")
 })
