@@ -7,6 +7,7 @@ app.set("views",path.join(__dirname.substring(0,__dirname.length-2),"views"))
 app.use(express.static(__dirname.substring(0,__dirname.length-2) + ''));
 
 
+const dbController = require("./dbController")
 
 app.get("/",(req,res)=>{
     res.render("index",{datas:"<em>this is something</em>"})
