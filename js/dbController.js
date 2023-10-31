@@ -16,10 +16,7 @@ function insertUser(userName,email,password,subPath="",recomPat=""){
     if(err) {
         return console.log(err.message); 
     }
-    console.log(`Row was added to the table: ${this.lastID}`);
-    db.all("SELECT * FROM user" , (err,rows)=>{
-        console.log(rows)
-    })
+
 })
 }
 
@@ -28,12 +25,18 @@ function insertPath(pathName,article){
     if(err) {
         return console.log(err.message); 
     }
-    console.log('Row was added to the table: ${this.lastID}');
-    db.all("SELECT * FROM user" , (err,rows)=>{
-        console.log(rows)
-    })
+
 })
 }
 
+function updatePath(pathName,newArticle){
+    db.run(`UPDATE path
+    SET article = ?
+    WHERE pathName = ?`,[newArticle,pathName])
+}
+
+
 
 module.exports.insertUser = insertUser;
+module.exports.insertPath = insertPath;
+module.exports.updatePath = updatePath;
