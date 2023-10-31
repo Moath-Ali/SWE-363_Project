@@ -53,4 +53,4 @@ function getArticle(pathName) {
 module.exports.insertUser = insertUser;
 module.exports.insertPath = insertPath;
 module.exports.updatePath = updatePath;
-module.exports.getPath = getPath;
+module.exports.getArticle = getArticle;
