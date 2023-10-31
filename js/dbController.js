@@ -11,8 +11,8 @@ let db= new sqlite3.Database(`${temp}/db.db`)
 // (pathName char Primary key, article char)`)
 
 
-function insertUser(userName,email,password,subPath="",recomPat=""){
-    db.run(`INSERT INTO user(userName, email, password) VALUES(?,?,?,?,?)`,[userName,email,password,subPath,recomPat] , (err) => {
+function insertUser(userName,email,password,subPath="",recomPath=""){
+    db.run(`INSERT INTO user(userName, email, password, subPath, recomPath) VALUES(?,?,?,?,?)`,[userName,email,password,subPath,recomPath] , (err) => {
     if(err) {
         return console.log(err.message); 
     }
