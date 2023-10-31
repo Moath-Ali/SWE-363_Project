@@ -37,7 +37,7 @@ function updatePath(pathName, newArticle) {
     WHERE pathName = ?`, [newArticle, pathName])
 }
 
-function getArticle(pathName) {
+function getPathInfo(pathName) {
     //when calling a function from another js file
     //and waiting for a result we must use a promise
     //then return the promise after we resolve it
@@ -55,4 +55,4 @@ function getArticle(pathName) {
 module.exports.insertUser = insertUser;
 module.exports.insertPath = insertPath;
 module.exports.updatePath = updatePath;
-module.exports.getArticle = getArticle;
+module.exports.getPathInfo = getPathInfo;
