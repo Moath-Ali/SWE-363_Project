@@ -51,8 +51,19 @@ function getPathInfo(pathName) {
         })
     })
 }
-// insertPath("path1","this is an intro","this is the <em>actual article</em>")
+
+function getAllPaths(){
+    return new Promise((resolve)=>{
+        db.all("SELECT * FROM path",(err,rows)=>{
+            if(err) return console.log(err)
+
+            resolve(rows);
+        })
+    })
+}
+// insertPath("path2","this is an intro2","this is the <em>actual article2</em>")
 module.exports.insertUser = insertUser;
 module.exports.insertPath = insertPath;
 module.exports.updatePath = updatePath;
 module.exports.getPathInfo = getPathInfo;
+module.exports.getAllPaths = getAllPaths;

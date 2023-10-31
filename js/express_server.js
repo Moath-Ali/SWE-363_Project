@@ -29,8 +29,11 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/modules",(req,res)=>{
+    dbController.getAllPaths().then(data=>{
+        console.log(data)
+        res.render("modules",{listOfPaths: data})
+    })
     
-    res.render("modules",{datas:"data"})
 })
 
 app.get("/modules/:path",async (req,res)=>{

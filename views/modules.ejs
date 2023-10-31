@@ -6,6 +6,14 @@
     <title>login</title>
 </head>
 <body>
-    
+    <!-- you 1 object of data in this page(path), you can acsess the following inside said variable
+    please look at ejs syntax to better understand the below code -->
+    <ul>
+        <% for(path of listOfPaths){%>
+            <li><%= path.pathName %></li>
+            <section><%- path.intro %></section>
+            <section><%- path.article %></section>
+        <%  }%> 
+    </ul>
 </body>
 </html>
