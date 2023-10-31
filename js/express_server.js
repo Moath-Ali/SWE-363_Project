@@ -32,12 +32,18 @@ app.get("/modules",(req,res)=>{
     res.render("modules",{datas:"data"})
 })
 
-app.get("/modules/:path",(req,res)=>{
+app.get("/modules/:path",async (req,res)=>{
     //get the path name from params
     //get the article from the database using its name
     //render the article
-    console.log(req.params)
-    res.render("path",{datas:"data"})
+    const pname = req.params.path
+
+    dbController.getPath(pname).then(e=>{
+        res.render("path",{pathName: pname, article: e})
+    })
+       
+    
+    
 })
 
 app.get("/quiz",(req,res)=>{
