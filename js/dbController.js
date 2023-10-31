@@ -34,8 +34,7 @@ function updatePath(pathName,newArticle){
     SET article = ?
     WHERE pathName = ?`,[newArticle,pathName])
 }
-
-
+insertPath("path2","sssssssssssssss")
 
 module.exports.insertUser = insertUser;
 module.exports.insertPath = insertPath;
