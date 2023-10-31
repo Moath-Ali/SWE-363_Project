@@ -8,8 +8,10 @@ let s = [];
 
 //path = pathName article
 // db.run(`CREATE TABLE path 
-// (pathName char Primary key, article char)`)
+// (pathName char Primary key, article char, intro char)`)
 
+
+// db.run("DROP TABLE path")
 
 function insertUser(userName, email, password, subPath = "", recomPath = "") {
     db.run(`INSERT INTO user(userName, email, password, subPath, recomPath) VALUES(?,?,?,?,?)`, [userName, email, password, subPath, recomPath], (err) => {
@@ -20,8 +22,8 @@ function insertUser(userName, email, password, subPath = "", recomPath = "") {
     })
 }
 
-function insertPath(pathName, article) {
-    db.run(`INSERT INTO path(pathName, article) VALUES(?,?)`, [pathName, article], (err) => {
+function insertPath(pathName,intro, article) {
+    db.run(`INSERT INTO path(pathName,intro , article) VALUES(?,?,?)`, [pathName,intro, article], (err) => {
         if (err) {
             return console.log(err.message);
         }
@@ -40,16 +42,16 @@ function getArticle(pathName) {
     //and waiting for a result we must use a promise
     //then return the promise after we resolve it
     return new Promise(function (resolve) {
-        db.all(`SELECT article FROM path
+        db.all(`SELECT intro,article FROM path
         WHERE pathName = ?`, [pathName], (err, rows) => {
             if (err) console.log(err)
             else {
-                resolve(rows[0].article + "");
+                resolve(rows[0]);
             }
         })
     })
 }
-
+// insertPath("path1","this is an intro","this is the <em>actual article</em>")
 module.exports.insertUser = insertUser;
 module.exports.insertPath = insertPath;
 module.exports.updatePath = updatePath;

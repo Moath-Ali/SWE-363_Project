@@ -39,7 +39,7 @@ app.get("/modules/:path",async (req,res)=>{
     const pname = req.params.path
 
     dbController.getArticle(pname).then(e=>{
-        res.render("path",{pathName: pname, article: e})
+        res.render("path",{pathName: pname, intro:e.intro, article: e.article})
     })
        
     
