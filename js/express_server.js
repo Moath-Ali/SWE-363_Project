@@ -1,22 +1,21 @@
 const express = require("express");
 const app = express();
 const path = require("path")
+const express_server_login = require('./express_server_login');
+
 
 app.set("view engine","ejs")
 app.set("views",path.join(__dirname.substring(0,__dirname.length-2),"views"))
 app.use(express.static(__dirname.substring(0,__dirname.length-2) + ''));
 
-// for hashing
 
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 // needed for POST request
 
 const bodyParser = require("body-parser"); // Import the body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true })); // Add body parsing middleware for URL-encoded data
 app.use(bodyParser.json());
-
+app.use(express_server_login);
 
 
 
@@ -82,23 +81,6 @@ app.put("/postPath",(req,res)=>{
 
 
 
-// Registering process
-  // wont need more parameters since register should not have subPath and recomPath but still need to add SID
-
-
-  app.post("/register", (req, res) => {
-    const { userName, email, password } = req.body;
-  
-    
-    bcrypt.hash(password, saltRounds, (err, hash) => {
-      if (err) {
-        return console.error(err);
-      }
-      
-      dbController.insertUser(userName, email, hash); 
-      res.redirect("/login");
-    });
-  });
 
 
 
@@ -106,11 +88,6 @@ app.put("/postPath",(req,res)=>{
 
 
 
-
-
-
-
-  //TESTING
 
 
 
