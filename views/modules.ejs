@@ -3,17 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <link rel="stylesheet" href="/css/modulesStyle.css">
+    <link rel="stylesheet" href="/css/main-theme.css">
+    <title>Modules</title>
 </head>
 <body>
     <!-- you 1 object of data in this page(path), you can acsess the following inside said variable
     please look at ejs syntax to better understand the below code -->
-    <ul>
+    <!-- <ul>
         <% for(path of listOfPaths){%>
             <li><%= path.pathName %></li>
             <section><%- path.intro %></section>
             <section><%- path.article %></section>
         <%  }%> 
-    </ul>
+    </ul> -->
+
+    <section class="articles-v3">
+
+        <div class="cd-container cd-max-width-adaptive-lg">
+          <ul class="articles-v3__list-grid">
+            <% for(path of listOfPaths){%>
+                <li class="articles-v3__item-grid">
+                    <a href=<%=`/modules/${path.pathName}` %> class="articles-v3__img-wrapper">
+                      <img src=<%= path.imgSrc %> alt="data-analytics image">
+                    </a>
+              
+                    <div>
+                      <h2 class="articles-v3__headline"><a href=<%=`/modules/${path.pathName}` %>><%=`${path.pathName}` %></a></h2>
+                      
+                      <p class="articles-v3__description"> <%= path.intro %></p>
+              
+                      <div class="articles-v3__author">
+                        <a href="/goToAuther" class="articles-v3__author-img">
+                          <img src="/Resources/user_icon.jpg" alt="Author picture">
+                        </a>
+                        <div class="articles-v3__author-info">
+                          <p><a href="#0" class="articles-v3__author-name" rel="author">Muath Alabeedi</a></p>
+                          <p class="articles-v3__date"><time>Oct 4, 2050</time>, &mdash; 5 min read</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+            <%  }%> 
+
+          </ul>
+        </div>
+      </section>
 </body>
 </html>

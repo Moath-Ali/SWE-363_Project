@@ -8,7 +8,7 @@ let s = [];
 
 //path = pathName article
 // db.run(`CREATE TABLE path 
-// (pathName char Primary key, article char, intro char)`)
+// (pathName char Primary key, article char NOT NULL, intro char NOT NULL, imgSrc char NOT NULL)`)
 
 
 // db.run("DROP TABLE path")
@@ -22,8 +22,8 @@ function insertUser(userName, email, password, subPath = "", recomPath = "") {
     })
 }
 
-function insertPath(pathName,intro, article) {
-    db.run(`INSERT INTO path(pathName,intro , article) VALUES(?,?,?)`, [pathName,intro, article], (err) => {
+function insertPath(pathName,intro, article,imgSrc) {
+    db.run(`INSERT INTO path(pathName,intro , article, imgSrc) VALUES(?,?,?,?)`, [pathName,intro, article,imgSrc], (err) => {
         if (err) {
             return console.log(err.message);
         }
@@ -61,7 +61,11 @@ function getAllPaths(){
         })
     })
 }
-// insertPath("path2","this is an intro2","this is the <em>actual article2</em>")
+
+// insertPath("Data_Analytics",`Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat optio illo repellendus aut? Quas assumenda tempore minus mollitia distinctio nisi, veritatis quae ducimus facere quod, incidunt atque reprehenderit nostrum.
+// Tempore hic molestiae doloribus, ducimus incidunt voluptatibus eligendi voluptas, in nihil quos tenetur illum inventore eius non, eum aliquam nisi facere consequuntur quia? Placeat nobis iste fuga sit ratione rem!`,
+// `this is the <em>actual article2</em> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat optio illo repellendus aut? Quas assumenda tempore minus mollitia distinctio nisi, veritatis quae ducimus facere quod, incidunt atque reprehenderit nostrum.
+// Tempore hic molestiae doloribus, ducimus incidunt voluptatibus eligendi voluptas, in nihil quos tenetur illum inventore eius non, eum aliquam nisi facere consequuntur quia? Placeat nobis iste fuga sit ratione rem!`,'/Resources/data-ana.jpg')
 module.exports.insertUser = insertUser;
 module.exports.insertPath = insertPath;
 module.exports.updatePath = updatePath;
