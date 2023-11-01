@@ -30,7 +30,6 @@ app.get("/",(req,res)=>{
 
 app.get("/modules",(req,res)=>{
     dbController.getAllPaths().then(data=>{
-        console.log(data)
         res.render("modules",{listOfPaths: data})
     })
     
@@ -43,7 +42,9 @@ app.get("/modules/:path",async (req,res)=>{
     const pname = req.params.path
 
     dbController.getPathInfo(pname).then(e=>{
+        if(e)
         res.render("path",{pathName: pname, intro:e.intro, article: e.article})
+        else res.redirect("/modules")
     })
        
     
@@ -63,6 +64,17 @@ app.get("/register",(req,res)=>{
 })
 
 
+app.get("/getPath",(req,res)=>{
+    dbController.getPathInfo(req.query.name).then(e=>{
+        res.json(e)
+    })
+    
+})
+
+app.put("/postPath",(req,res)=>{
+
+    dbController.updatePath(req.query.name,req.body.article)
+})
 
 
 
