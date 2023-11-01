@@ -25,10 +25,11 @@ Usage: codyhouse.co/license
   }
   
   body {
-    background-color: hsl(0, 0%, 100%);
+    background-color: #2E3440;
     font-family: system-ui, sans-serif;
-    color: hsl(230, 7%, 23%);
-    font-size: 1.125rem; /* 18px */
+    color: hsl(0, 0%, 91%);
+    font-size: 1.125rem;
+    /* 18px */
     line-height: 1.4;
   }
   
