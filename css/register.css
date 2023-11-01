@@ -426,7 +426,7 @@ Usage: codyhouse.co/license
   }
 
   .login-form{
-    width: 50%;
+    max-width: 50%;
     margin: 0 auto; 
     align-items: center; 
   }
