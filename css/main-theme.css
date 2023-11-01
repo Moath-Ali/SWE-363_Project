@@ -1,3 +1,27 @@
-h1{
-    color: red;
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+
+    background-color: #2E3440;
+    font-family: system-ui, sans-serif;
+    color: hsl(0, 0%, 91%);
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+    color: hsl(0, 0%, 94%);
+    font-weight: 700;
+}
+
+a{
+    color: #bbc5d8;
 }
