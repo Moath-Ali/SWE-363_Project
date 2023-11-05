@@ -1,7 +1,0 @@
-EX 1:
-Website: https://www.google.com/
-ip: 142.251.37.46
-31 requests were made
-the returns were documents,script,pngs,and html,fetch,xhr,web
-the largest 174 kb
-it took 3.91 seconds  and 642ms
