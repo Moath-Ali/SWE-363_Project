@@ -5,7 +5,9 @@ const saveButton = document.getElementById("saveButton")
 
 
 editButton.addEventListener("click",(e)=>{
-    fetch(`http://localhost:3000/getPath?name=${pName}`)
+
+    console.log(window.location.href.substring(0,window.location.href.indexOf("/",2)))
+    fetch(`https://devpath0.onrender.com/getPath?name=${pName}`)
     .then(res=>{
         return res.json()
     })
