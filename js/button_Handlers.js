@@ -18,7 +18,7 @@ editButton.addEventListener("click",(e)=>{
 
 saveButton.addEventListener("click",sFunction)
 function sFunction(){
-    fetch(`http://localhost:3000/postPath?name=${pName}`,{
+    fetch(`https://devpath0.onrender.com/postPath?name=${pName}`,{
         method:"PUT",
         headers: {
             'Accept': 'application/json, text/plain, */*',
