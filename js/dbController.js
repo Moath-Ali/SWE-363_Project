@@ -31,10 +31,11 @@ function insertPath(pathName,intro, article,imgSrc) {
     })
 }
 
-function updatePath(pathName, newArticle) {
+function updatePath(pathName,newIntro, newArticle) {
     db.run(`UPDATE path
-    SET article = ?
-    WHERE pathName = ?`, [newArticle, pathName])
+    SET article = ?,
+        intro = ?
+    WHERE pathName = ?`, [newArticle, newIntro, pathName])
 }
 
 function getPathInfo(pathName) {

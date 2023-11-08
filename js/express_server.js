@@ -72,25 +72,8 @@ app.get("/getPath",(req,res)=>{
 
 app.put("/postPath",(req,res)=>{
 
-    dbController.updatePath(req.query.name,req.body.article)
+    dbController.updatePath(req.query.name,req.body.intro,req.body.article)
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 app.get("/about-us",(req,res)=>{
