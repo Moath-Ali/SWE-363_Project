@@ -19,7 +19,21 @@ router.post('/register', (req, res) => {
 
 
 router.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  //this method will return the password hashed to compare with the entered one then return true if it's correct
+  const validUser = dbController.checkUser(email).then((data)=>{
+    bcrypt.compare(password,data.password,(err,result)=>{
+      if(result){
+        console.log("YOU ARE LOGGED IN")
+      }
+      else{
+        console.log("YOU ARE NOT LOGGED IN :(")
+      }
+    })
+  })
   
+  res.redirect('/login');
+
 });
 
 module.exports = router;

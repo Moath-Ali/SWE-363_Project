@@ -22,8 +22,8 @@ function insertUser(userName, email, password, subPath = "", recomPath = "") {
     })
 }
 
-function insertPath(pathName,intro, article,imgSrc) {
-    db.run(`INSERT INTO path(pathName,intro , article, imgSrc) VALUES(?,?,?,?)`, [pathName,intro, article,imgSrc], (err) => {
+function insertPath(pathName, intro, article, imgSrc) {
+    db.run(`INSERT INTO path(pathName,intro , article, imgSrc) VALUES(?,?,?,?)`, [pathName, intro, article, imgSrc], (err) => {
         if (err) {
             return console.log(err.message);
         }
@@ -31,7 +31,7 @@ function insertPath(pathName,intro, article,imgSrc) {
     })
 }
 
-function updatePath(pathName,newIntro, newArticle) {
+function updatePath(pathName, newIntro, newArticle) {
     db.run(`UPDATE path
     SET article = ?,
         intro = ?
@@ -53,12 +53,23 @@ function getPathInfo(pathName) {
     })
 }
 
-function getAllPaths(){
-    return new Promise((resolve)=>{
-        db.all("SELECT * FROM path",(err,rows)=>{
-            if(err) return console.log(err)
+function getAllPaths() {
+    return new Promise((resolve) => {
+        db.all("SELECT * FROM path", (err, rows) => {
+            if (err) return console.log(err)
 
             resolve(rows);
+        })
+    })
+}
+
+function checkUser(email) {
+    return new Promise(function (resolve) {
+        db.all(`SELECT password FROM user WHERE email = ?`,[email], (err, rows) => {
+            if (err) return console.log(err)
+            else {
+                resolve(rows[0]);
+            }
         })
     })
 }
@@ -72,3 +83,6 @@ module.exports.insertPath = insertPath;
 module.exports.updatePath = updatePath;
 module.exports.getPathInfo = getPathInfo;
 module.exports.getAllPaths = getAllPaths;
+module.exports.checkUser = checkUser;
+
+db.all
