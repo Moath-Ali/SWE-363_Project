@@ -6,8 +6,8 @@ const saveButton = document.getElementById("saveButton")
 
 editButton.addEventListener("click",(e)=>{
 
-    console.log(window.location.href.substring(0,window.location.href.indexOf("/",2)))
-    fetch(`https://devpath0.onrender.com/getPath?name=${pName}`)
+    console.log(window.location.href.split("/"))
+    fetch(`http://localhost:3000/getPath?name=${pName}`)
     .then(res=>{
         return res.json()
     })
@@ -18,7 +18,7 @@ editButton.addEventListener("click",(e)=>{
 
 saveButton.addEventListener("click",sFunction)
 function sFunction(){
-    fetch(`https://devpath0.onrender.com/postPath?name=${pName}`,{
+    fetch(`http://localhost:3000/postPath?name=${pName}`,{
         method:"PUT",
         headers: {
             'Accept': 'application/json, text/plain, */*',
