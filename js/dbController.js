@@ -73,6 +73,19 @@ function checkUser(email) {
         })
     })
 }
+function saveSID(SID,email){
+    db.run(`UPDATE user SET SID = ? WHERE email = ?`,[SID,email])
+}
+function checkSID(SID){
+    return new Promise(function (resolve) {
+        db.all(`SELECT userName FROM user WHERE SID = ?`,[SID], (err, rows) => {
+            if (err) return console.log(err)
+            else {
+                resolve(rows[0]);
+            }
+        })
+    })
+}
 
 // insertPath("Data_Analytics",`Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat optio illo repellendus aut? Quas assumenda tempore minus mollitia distinctio nisi, veritatis quae ducimus facere quod, incidunt atque reprehenderit nostrum.
 // Tempore hic molestiae doloribus, ducimus incidunt voluptatibus eligendi voluptas, in nihil quos tenetur illum inventore eius non, eum aliquam nisi facere consequuntur quia? Placeat nobis iste fuga sit ratione rem!`,
@@ -84,5 +97,6 @@ module.exports.updatePath = updatePath;
 module.exports.getPathInfo = getPathInfo;
 module.exports.getAllPaths = getAllPaths;
 module.exports.checkUser = checkUser;
+module.exports.saveSID = saveSID;
+module.exports.checkSID = checkSID;
 
-db.all
