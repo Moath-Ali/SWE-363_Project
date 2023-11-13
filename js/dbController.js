@@ -6,6 +6,11 @@ let s = [];
 // db.run(`CREATE TABLE user 
 // (userName char Primary key, email char key, password char Not Null, subPath char, recomPath char, SID char)`)
 
+// db.run(`CREATE TABLE admin 
+// (userName char, 
+//     FOREIGN KEY (userName) references user (userName))`)
+
+
 //path = pathName article
 // db.run(`CREATE TABLE path 
 // (pathName char Primary key, article char NOT NULL, intro char NOT NULL, imgSrc char NOT NULL)`)
