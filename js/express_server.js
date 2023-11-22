@@ -100,6 +100,14 @@ app.get("/stories", (req, res) => {
     res.render("stories", { datas: "data" })
 
 })
+app.get("/contact-us", (req, res) => {
+    res.render("contact-us", { datas: "data" })
+
+})
+app.get("/contact-us-thank-you", (req, res) => {
+    res.render("contact-us-thank-you", { datas: "data" })
+
+})
 
 app.get("*/", (req, res) => {
     res.render("not-found", { datas: "data" })

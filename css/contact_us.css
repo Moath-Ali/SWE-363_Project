@@ -1,0 +1,137 @@
+html, body {
+  background: #23272f;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'system-ui', sans-serif;
+  color: white;
+}
+
+.container {
+  background: #374151;
+  width: 800px;
+  height: 500px;
+  border-radius: 24px;
+  box-shadow: 16px 16px 8px rgba(0, 0, 0, .1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture-container {
+
+  width: 50%;
+  height: 100%;
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form-container {
+  height: 90%;
+  width: 300px;
+}
+
+.contact-form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+.form-header {
+  font-size: 2em;
+  font-weight: 700;
+  align-self: flex-start;
+}
+
+.email-input {
+  border: none;
+  outline: none;
+  background: #eee;
+  padding: 20px;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 100%;
+}
+.name-input {
+  border: none;
+  outline: none;
+  background: #eee;
+  padding: 20px;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 100%;
+}
+
+.message {
+  border: none;
+  outline: none;
+  resize: none;
+  background: #eee;
+  padding: 20px;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 100%;
+}
+
+
+.submit {
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+  background: #0d6d8c;
+  font-size: 100%;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: transform 300ms 0s cubic-bezier(0, 0.23, 0.29, 2.45);
+}
+a{
+  color:white;
+  text-decoration: none;
+}
+.submit:hover {
+  cursor: pointer;
+  background: #2d8cab;
+  transform: translateY(-2px);
+}
+@media (max-width:430px){
+  
+  .picture-container{
+    display: none;
+  }
+  .container{
+    width: 100%;
+    height: 90%;
+    
+  }
+  
+  .submit{
+    width: 100px;
+  }
+  .name-input{
+    width: 200px;
+  }
+  .email-input{
+    width: 200px;
+  }
+  .message{
+    width: 200px;
+  }
+  .contact-form{
+    display: flex;
+    justify-content: space-around;
+  }
+  .submit:hover {
+    cursor: pointer;
+    background: #2d8cab;
+    transform: translateY(-2px);
+  }
+}
