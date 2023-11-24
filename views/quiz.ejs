@@ -3,8 +3,58 @@
 <head>
     <%- include("partials/head.ejs") %>
     <title>quiz</title>
+    <link rel="stylesheet" href="css\quiz.css">
 </head>
 <body>
     <%- include("partials/loader.ejs") %>
+    <div class="card">
+        <section class="question-card">
+            <div class="question-num">
+                ## out of ##
+            </div>
+            
+
+            <span class="question">
+                this is question 
+            </span>
+           
+            
+            <span class="answers">
+                <span class="p">
+                    Strongly disagree
+                </span>
+                <div id="radios">
+                    
+                    <label for="input1"></label>
+                    <input  id="input1" name="radio" type="radio" />
+                    <label for="input2"></label>
+                    <input  id="input2" name="radio" type="radio" />
+                    <label for="input3"></label>
+                    <input  id="input3" name="radio" type="radio" />
+                    <label for="input4"></label>
+                    <input  id="input4" name="radio" type="radio" />
+                    <label for="input5"></label>
+                    <input  id="input5" name="radio" type="radio" />
+                    
+                    <span id="slider"></span>
+                </div>
+                <span class="p">
+                    Strongly agree
+                </span>
+            </span>
+            <div class="buttons">
+                <button class="mf1-btn qbtn1">
+                    Previous
+                </button>
+                <button class="mf1-btn qbtn2">
+                    Next
+                </button>
+            </div>
+            
+        </section>
+    </div>
+    
 </body>
+
+
 </html>

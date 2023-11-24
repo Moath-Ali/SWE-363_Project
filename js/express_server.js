@@ -109,6 +109,10 @@ app.get("/contact-us-thank-you", (req, res) => {
 
 })
 
+app.get("/quiz-start", (req, res) => {
+    res.render("quiz-start", { datas: "data" })
+
+})
 app.get("*/", (req, res) => {
     res.render("not-found", { datas: "data" })
 })
