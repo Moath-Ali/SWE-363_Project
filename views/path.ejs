@@ -1,6 +1,7 @@
 <html lang="en">
 <head>
   <%- include("partials/head.ejs") %>
+  <link rel="stylesheet" href="/css/elements.css">
   <link rel="stylesheet" href="/css/loader.css">
     <title>path</title>
 </head>
@@ -12,8 +13,9 @@
     <section><%- intro  %></section>
     <article> <%- article %></article>
     
-    <textarea id="introTA" cols="50" rows="50" style="display: block;">this is the intro</textarea>
-    <textarea id="articleTA" cols="50" rows="50" style="display: block;">this is the article</textarea>
+    <textarea  id="introTA" cols="50" placeholder="Enter the updated introduction" rows="50" style="display: block;"></textarea>
+    <br>
+    <textarea  id="articleTA" cols="50" placeholder="Enter the updated article" rows="50" style="display: block;"></textarea>
 
     <button id="edit">Edit Article</button>
     <button id="saveButton">Save</button>

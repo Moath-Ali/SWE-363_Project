@@ -1,0 +1,49 @@
+/* Custom styles for the textarea */
+textarea {
+    width: 400px;
+    height: 200px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    resize: none; /* Disable resizing */
+    overflow: auto; /* Enable scrolling */
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Hover state */
+  textarea:hover {
+    border-color: #999;
+  }
+  
+  /* Focus state */
+  textarea:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 0 2px rgba(102, 175, 233, 0.6);
+  }
+  
+  /* Placeholder text */
+  textarea::placeholder {
+    color: #999;
+  }
+  
+  /* Disabled state */
+  textarea:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+  }
+  
+  /* Main color customization */
+  textarea {
+    border-color: #2E3440;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  textarea:hover {
+    border-color: #999;
+  }

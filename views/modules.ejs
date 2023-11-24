@@ -4,6 +4,8 @@
     <%- include("partials/head.ejs") %>
     <link rel="stylesheet" href="/css/modulesStyle.css">
     <link rel="stylesheet" href="/css/loader.css">
+    <link rel="stylesheet" href="/css/elements.css">
+
     <title>Modules</title>
 </head>
 <body>
@@ -49,6 +51,19 @@
 
           </ul>
         </div>
+
+        ## form for adding a new module to the database
+        <div>
+          <form>
+            <h2 style="color: aliceblue;">Add new module</h2>
+            <textarea  id="introAdd" cols="50" placeholder="Enter the introduction for new module" rows="50" style="display: block;"></textarea>
+           <br>
+            <textarea  id="ArticleAA" cols="50" placeholder="Enter the article for the new module" rows="50" style="display: block;"></textarea>
+         <br>
+            <button type="submit" id="addModuleButton" style="background-color: gray;">Add new module</button>
+          </form>
+        </div>
       </section>
 </body>
+<script type="module" src="/js/button_Handlers.js"></script>
 </html>
