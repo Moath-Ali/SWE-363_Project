@@ -89,15 +89,35 @@
     </div>
     </div>
     <div class="contact-form-container">
-    <form class="contact-form">
+    <form class="contact-form" action="https://formsubmit.co/f98273bf2db1855af0269dc83387d9c4" method="POST">
       <div class="form-header">Contact us</div>
-      <input type="text" class="name-input" placeholder="First Name" id="name" required/>
-      <input type="text" class="name-input" placeholder=" Last Name" id="last-name" required/>
-      <input type="email" class="email-input"  placeholder="Email" id="email" required/>
-      <textarea name="feedback" cols="30" rows="5" class="message" placeholder="Message" required></textarea>
-      <button class="submit" type="submit"><a href="contact-us-thank-you">Submit</a></button>
+      <input type="text" class="name-input" name="name" placeholder="First Name" id="name" required/>
+      <input type="text" class="Subject" name="Subject" placeholder="Subject" id="Subject" required/>
+      <input type="email" class="email-input"  name="email" placeholder="Email" id="email" required/>
+      <input type="hidden" name="_next" value="http://localhost:3000/contact-us-thank-you">
+      <textarea name="message" cols="30" rows="5" class="message" placeholder="Message" id="message" required></textarea>
+      <button class="submit" type="submit">Submit</button>
     </form>
       </div>
   </div>
+  <!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script >
+    function sendEmail(){
+        Email.send({
+        Host : "smtp.gmail.com",
+        Username : "DevPath23@gmail.com",
+        Password : "DevPath@KFUPM123",
+        To : 'talsumari@gmail.com',
+        From : document.getElementById("email").value,
+        Subject : document.getElementById("Subject").value,
+        Body : "Name: " + document.getElementById("name").value +"<br>"+
+          "Email: " + document.getElementById("email").value +"<br> "+
+          "Message: "+ document.getElementById("message")
+        }).then(
+    message => alert("message sent")
+    );
+
+    }
+  </script> -->
 </body>
 </html>
