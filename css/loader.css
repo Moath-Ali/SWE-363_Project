@@ -23,7 +23,7 @@
     
 }
 
-body *:not(.loader_cont,.loader,.loader-text,.load){
+body *:not(.loader_cont,.loader,.loader-text,.load,.header__nav,.header__nav-inner,.header__list, .header__item , .header__link,.header__nav-btn){
     opacity: 0;
     animation-delay: 1s;
     animation-duration: 3s;
