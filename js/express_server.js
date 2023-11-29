@@ -87,6 +87,11 @@ app.put("/postPath", (req, res) => {
     dbController.updatePath(req.query.name, req.body.intro, req.body.article)
 })
 
+app.put("/insertpath", (req, res) => {
+
+    console.log(req.body)
+})
+
 
 app.get("/about-us", (req, res) => {
     res.render("about-us", { datas: "data" })
