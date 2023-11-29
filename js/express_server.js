@@ -87,9 +87,9 @@ app.put("/postPath", (req, res) => {
     dbController.updatePath(req.query.name, req.body.intro, req.body.article)
 })
 
-app.put("/insertpath", (req, res) => {
-
-    console.log(req.body)
+app.post("/insertpath", (req, res) => {
+    const body = req.body;
+    dbController.insertPath(body.name,body.intro,body.article,body.img)
 })
 
 
