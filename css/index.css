@@ -290,6 +290,7 @@ color: #0d6d8c;
   height: 1px;
   width: 100%;
   background-color: hsl(var(--mf1-color-contrast-lower-hsl));
+  margin-right: 5px;
 }
 
 .header__trigger {
@@ -441,7 +442,85 @@ color: #0d6d8c;
   margin-top: 20px;
   
  }
+.log-out-card{
+  /* display: flex;
+  justify-content: end;
+  margin-top: 3px;
+  position: absolute;
+  right: 0%;
+  z-index: 3; */
  
+  margin-top: 3px;
+  position: absolute;
+  right:0%;
+  z-index: 3;
+  margin-right: 5px;
+  display: none;
+}
+.log-out-btn-mob{
+  display: none;
+}
+li.header__item.out-btn{
+  margin: 0;
+
+}
+.log-out-btn{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: auto;
+  padding-top: 10px ;
+  padding-bottom: 10px;
+  background-color: #374151;
+  text-align: center;
+  border-radius: 20px;
+  padding-left:10px ;
+  padding-right:10px ;
+  /* background-color: #374151;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  width: 135px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:auto; */
+}
+.out-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: 1rem;
+  margin-left: 0.8rem; */
+  /* margin: auto; */
+}
+.icon{
+  margin-left:5px ;
+  font-size: 1.2rem;
+}
+.user-tag{
+  /* padding-right: 5px;
+  padding-left: 5px; */
+  /* font-size: var(--mf1-text-lg); */
+  color: white;
+  text-decoration: none;
+  transition: 1s;
+  padding: 5px 10px 5px 10px;
+}
+.user-tag:hover{
+  /* border-radius: 5px; */
+  background-color: #0d6d8c;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transition;
+ 
+}
+.name-of-user{
+  margin-left: 5px;
+}
 
 /*   hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh                                                 */
 @media (min-width: 64rem) {
@@ -545,7 +624,13 @@ img{
   .story_intro{
     font-size: 1rem;
   }
-  
+  .log-out-btn-mob{
+    display: block;
+    margin-top: 4px;
+  }
+  .log-out-card{
+    display: none;
+  }
 }
 
 /* utility classes */

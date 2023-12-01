@@ -22,7 +22,8 @@ app.use(express_server_login);
 const dbController = require("./dbController")
 
 app.get("/", (req, res) => {
-    res.render("index", { datas: "<em>this is something</em>" })
+    const user =req.cookies.user;
+    res.render("index", { datas: "<em>this is something</em>" , user})
 })
 
 app.get("/modules", (req, res) => {
@@ -60,7 +61,8 @@ app.get("/login", (req, res, next) => {
             if (data) {
                 //user is logged in already and their session has not endded yet
                 //add a "flash" before refirectin!!
-                res.redirect("/modules")
+                const username = data.userName;
+                res.redirect("/?username="+username)
             }
             else {
                 res.render('login');

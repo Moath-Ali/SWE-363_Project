@@ -4,6 +4,9 @@
     <%- include("partials/head.ejs") %>
     <link rel="stylesheet" href="/css/loader.css">
     <link rel="stylesheet" href="css/index.css">
+    <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
     <title>home</title>
 </head>
 <body>
@@ -69,18 +72,47 @@
                 <li class="header__item"><a href="about-us" class="header__link">About us</a></li>
                 <li class="header__item"><a href="contact-us" class="header__link">Contact us</a></li>
                 <li class="header__item header__item--divider" aria-hidden="true"></li>
-                <li class="header__item"><a href="register" class="header__nav-btn mf1-btn mf1-btn--primary">Log in</a></li>
+                <% if(user!== undefined){%>
+
+                    <div class="user-tag" onclick="display()">
+                        
+                        <i class="fa fa-user icon "></i>
+                        <span class="name-of-user"><%-user%></span>
+                        <div class="log-out-btn-mob">
+                            <li class="header__item out-btn"><a href="register" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
+                        </div>
+                        
+                    </div>
+                    
+                    <%}%>
+                    <%if(user===undefined){%>
+                        <li class="header__item"><a href="register" class="header__nav-btn mf1-btn mf1-btn--primary">Log in</a></li>
+
+                        <%}%>
+                <!-- 
+                    
+                    <div class="user-logged-in">
+                        <i class="fa fa-user"></i>
+                        <span class="name-of-user"></span>
+                    </div>
+                  -->
+                 
                 <!-- <li class="header__item"><a><i class="fa-regular fa-user"></i></a></li> -->
                 <!-- <div class="ham_btn">
                   <i class="fa-solid fa-bars"></i>
                 </div> -->
-                <!-- <li class="header__item"><a href="#0" class="header__nav-btn mf1-btn mf1-btn--primary">sign up</a></li> -->
+                <!-- <li class="header__item"><a href="#0" class="header__nav-btn mf1-btn mf1-btn--primary">sign up</a></li> -->  
               </ul>
             </div>
           </nav>
           
         </div>
-      </header>
+    </header>
+    <div class="log-out-card"id="user-tag">
+        <div class="log-out-btn">
+            <li class="header__item out-btn"><a href="register" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
+        </div>
+    </div>
       <div class="intro">
         <div class="intro1">
           <span class="first_intro"> Take the quiz <strong>NOW!</strong><br>and know the path <br>that is best for you</span>
@@ -157,7 +189,7 @@
         </div>
       </footer>
       <script src="js/index.js"></script>
-</body>
+    </body>
 
     <script src="/js/screen-saver.js"></script>
 </html>

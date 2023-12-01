@@ -34,17 +34,23 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
   //this method will return the password hashed to compare with the entered one then return true if it's correct
-
   dbController.checkUser(email).then((data)=>{
     bcrypt.compare(password,data.password,(err,result)=>{
       if(result){
-        console.log("YOU ARE LOGGED IN")
+        dbController.checkUs(email).then((datas)=>{
+          req.session.user=datas.userName;
+          console.log(req.session.user);
+          console.log("YOU ARE LOGGED IN")
         //send back the session id in a cookie
         res.cookie("Sid",req.session.id,{maxAge:9000000})
+        res.cookie("user",req.session.user,{maxAge:9000000})
         //save the session id to the logged in user
         dbController.saveSID(req.session.id,email); 
         //add a flash before going to modules
-        res.redirect('/modules');
+        // res.redirect('/?username='+username);
+        res.redirect('/')
+        })
+        
       }
       else{
         console.log("YOU ARE NOT LOGGED IN :(")

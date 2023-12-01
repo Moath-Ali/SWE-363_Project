@@ -78,6 +78,16 @@ function checkUser(email) {
         })
     })
 }
+function checkUs(email) {
+    return new Promise(function (resolve) {
+        db.all(`SELECT userName FROM user WHERE email = ?`,[email], (err, rows) => {
+            if (err) return console.log(err)
+            else {
+                resolve(rows[0]);
+            }
+        })
+    })
+}
 function saveSID(SID,email){
     db.run(`UPDATE user SET SID = ? WHERE email = ?`,[SID,email])
 }
@@ -104,4 +114,6 @@ module.exports.getAllPaths = getAllPaths;
 module.exports.checkUser = checkUser;
 module.exports.saveSID = saveSID;
 module.exports.checkSID = checkSID;
+module.exports.checkUs = checkUs;
+
 
