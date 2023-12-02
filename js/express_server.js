@@ -92,6 +92,7 @@ app.put("/postPath", (req, res) => {
 app.post("/insertpath", (req, res) => {
     const body = req.body;
     dbController.insertPath(body.name,body.intro,body.article,body.img)
+    res.redirect("/modules")
 })
 
 

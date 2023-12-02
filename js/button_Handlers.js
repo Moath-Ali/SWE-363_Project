@@ -1,4 +1,3 @@
-const { insertPath } = require("./dbController");
 
 const tArea = document.getElementById("articleTA");
 const editButton = document.getElementById("edit")

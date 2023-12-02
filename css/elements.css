@@ -47,3 +47,31 @@ textarea {
   textarea:hover {
     border-color: #999;
   }
+  .submit {
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 150px;
+    padding: 20px;
+    margin-right: 95px;
+    background: #0d6d8c;
+    font-size: 100%;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: transform 300ms 0s cubic-bezier(0, 0.23, 0.29, 2.45);
+  }
+  .submit:hover {
+    cursor: pointer;
+    background: #2d8cab;
+    transform: translateY(-2px);
+  }
+  @media (max-width:430px){
+    .submit{
+      width: 100px;
+    }
+    .submit:hover {
+      cursor: pointer;
+      background: #2d8cab;
+      transform: translateY(-2px);
+    }
+  }
