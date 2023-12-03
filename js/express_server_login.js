@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const dbController = require('./dbController');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 var cookieParser = require('cookie-parser')
 router.use(cookieParser())
