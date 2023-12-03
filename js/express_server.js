@@ -48,7 +48,11 @@ app.get("/modules/:path", async (req, res) => {
 
 
 })
-
+app.get("/quiz",(req,res)=>{
+    dbController.getAllQuest().then(data => {
+        res.render("quiz", { listOfQuest: data })
+    })
+})
 app.get("/quiz", (req, res) => {
     res.render("quiz", { datas: "data" })
 })

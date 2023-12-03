@@ -67,7 +67,14 @@ function getAllPaths() {
         })
     })
 }
-
+function getAllQuest() {
+    return new Promise((resolve) => {
+        db.all("SELECT * FROM quiz", (err, rows) => {
+            if (err) return console.log(err)
+            resolve(rows);
+        })
+    })
+}
 function checkUser(email) {
     return new Promise(function (resolve) {
         db.all(`SELECT password FROM user WHERE email = ?`,[email], (err, rows) => {
@@ -115,5 +122,6 @@ module.exports.checkUser = checkUser;
 module.exports.saveSID = saveSID;
 module.exports.checkSID = checkSID;
 module.exports.checkUs = checkUs;
+module.exports.getAllQuest = getAllQuest;
 
 

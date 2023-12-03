@@ -3,11 +3,13 @@
 <head>
     <%- include("partials/head.ejs") %>
     <title>quiz</title>
-    <link rel="stylesheet" href="css\quiz.css">
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css\quiz.css">
+    
 </head>
 <body>
-    <%- include("partials/loader.ejs") %>
-    <div class="card">
+    <!-- <div class="card">
         <section class="question-card">
             <div class="question-num">
                 ## out of ##
@@ -52,8 +54,29 @@
             </div>
             
         </section>
+    </div> --> 
+      
+    <div class="quiz-container">
+        <% for(q of listOfQuest){ %>
+            <div class="question"> <%= q.Qno%>. <%=q.question%></div>
+            <div class="options">
+                <div class=<%=`option option${q.Qno}`%>>A. <%= q.a %></div>
+                <div class=<%=`option option${q.Qno}`%>>B. <%= q.b %></div>
+                <div class=<%=`option option${q.Qno}`%>>C. <%= q.c %></div>
+                <div class=<%=`option option${q.Qno}`%> id="last-option">D. <%= q.d %></div>
+            </div>
+        <% } %>
+        <% if(q.Qno === 19) {%> 
+            <div class="quiz-btn">
+                <button class="mf1-btn sub-btn"><a>Submit</a></button>
+            </div> 
+             
+        <% } %>
     </div>
-    
+          
+      
+      
+      <script src="js/quiz.js"></script>
 </body>
 
 

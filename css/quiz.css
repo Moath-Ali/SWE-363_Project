@@ -1,4 +1,4 @@
-*{margin:0;padding:0;box-sizing:border-box;}
+/* *{margin:0;padding:0;box-sizing:border-box;}
 body{background-color: #23272f;color:#fff;padding-bottom:10%;}
 h1{text-align:center;margin:20% 0 5%;font-family:verdana;font-weight:100;}
 #radios{
@@ -50,10 +50,10 @@ label{
   background-color: #374151;
   height: 450px;
   width: 600px;
-  border-radius: 60px;
+  border-radius: 60px; */
   /* padding-left: 30px; */
   
-}
+/* }
 .card{
   display: flex;
   justify-content: center;
@@ -76,17 +76,17 @@ label{
  
 
 }
-.phrase1{
-  display: flex;
+.phrase1{ */
+  /* display: flex; */
   /* margin-top:100px ; */
-}
+/* }
 .phrase2{
   margin-left: 20px;
 }
 
-.answers{
+.answers{ */
   /* background-color: #0d6d8c; */
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -94,18 +94,137 @@ label{
   padding-top: 35px;
   padding-left: 20px;
   padding-right: 20px;
-}
+} */
 /* .qbtn{
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
 } */
+/* button{
+  border: none;
+  background-color: #0d6d8c;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  color: white;
+}
+.mf1-btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 1em; */
+  /* white-space: nowrap;
+  text-decoration: none;
+  background: #0d6d8c;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 0.2s ease;
+  will-change: transform; */ 
+  /* padding: var(--mf1-space-2xs) var(--mf1-space-sm); */
+  /* border-radius: 0.25em;
+}
+
+.mf1-btn:focus-visible {
+  box-shadow: 0px 0px 0px 2px hsl(var(--mf1-color-bg-hsl)), 0px 0px 0px 4px hsla(var(--mf1-color-contrast-higher-hsl), 0.15);
+  outline: none;
+} */
+
+/* click transform*/
+/* .mf1-btn:active {
+  transform: translateY(2px);
+}
+.mf1-btn:hover{
+  box-shadow: rgba(255, 255, 255, 0.1) 0 4px 12px;
+}
+.buttons{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-top: 50px;
+} */
+/* .qbtn2{
+  padding-left: 40px;
+  padding-right: 40px;
+} */
+body {
+  font-family: 'system-ui', sans-serif;
+  background-color: #23272f;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+ 
+  margin: 0;
+}
+
+.quiz-container {
+  background-color: #374151;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  width: 600px;
+  /* margin-top: 50px;
+  margin-bottom:50px ; */
+  /* margin: auto;
+  height: auto; */
+  margin-bottom: 50px;
+  margin-top:50px;
+  text-align: center;
+  height: 5550px;
+}
+
+.question {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+/* #last-option{
+  margin-bottom: 20px;
+} */
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  text-align: left;
+}
+
+.option {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.option:hover {
+  background-color: #207f9e;
+}
+
+.selected {
+  background-color: #0d6d8c;
+  color: #fff;
+}
+
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
 button{
   border: none;
   background-color: #0d6d8c;
   padding: 10px 20px 10px 20px;
   border-radius: 5px;
   color: white;
+ 
+}
+.quiz-btn{
+  display: flex;
+  justify-content: end;
+  margin-top: 100px;
 }
 .mf1-btn {
   position: relative;
@@ -140,13 +259,31 @@ button{
 .mf1-btn:hover{
   box-shadow: rgba(255, 255, 255, 0.1) 0 4px 12px;
 }
-.buttons{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  margin-top: 50px;
+a{
+  text-decoration: none;
+  color: white;
 }
-/* .qbtn2{
-  padding-left: 40px;
-  padding-right: 40px;
-} */
+@media(max-width:430px){
+  body {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 1rem;
+    
+  }
+  .quiz-container {
+   
+    padding: 30px;
+    width: 300px;
+    /* margin-top: 50px;
+    margin-bottom:50px ; */
+    /* margin: auto;
+    height: auto; */
+    margin-bottom: 50px;
+    margin-top:50px;
+    text-align: center;
+    height: 8160px;
+  }
+}
