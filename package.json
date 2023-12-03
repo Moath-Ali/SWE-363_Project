@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node ./js/index.js"
+    "start": "node ./js/express_server.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
