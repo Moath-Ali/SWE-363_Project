@@ -54,6 +54,21 @@ app.get("/modules/:path", async (req, res) => {
 
 
 
+
+
+})
+
+app.get("/modulesAdmin/:path", async (req, res) => {
+    //get the path name from params
+    //get the article from the database using its name
+    //render the article
+    const pname = req.params.path
+
+    dbController.getPathInfo(pname).then(e => {
+        if (e)
+            res.render("path"+"Admin", { pathName: pname, intro: e.intro, article: e.article })
+        else res.redirect("/modules")
+    })
 })
 app.get("/quiz",(req,res)=>{
     dbController.getAllQuest().then(data => {

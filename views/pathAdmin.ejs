@@ -7,8 +7,6 @@
     <title>path</title>
 </head>
 <body>
-
-
   <%- include("partials/loader.ejs") %>
   <!-- pathName, and article are the two variables you can use in this page to get data 
     note: you should use the same tag used in article if you want to insert html elements into the page-->
@@ -16,7 +14,13 @@
     <h1><%= pathName %></h1>
     <section><p><%- intro  %></p></section>
     <article> <%- article %></article>
-  </article>
+    </article>
+    <textarea  id="introTA" cols="50" placeholder="Enter the updated introduction" rows="50" style="display: block;"></textarea>
+    <br>
+    <textarea  id="articleTA" cols="50" placeholder="Enter the updated article" rows="50" style="display: block;"></textarea>
+
+    <button id="edit" class='submit'>Edit Article</button>
+    <button id="saveButton" class='submit'>Save</button>
 </body>
 <script type="module" src="/js/button_Handlers.js"></script>
 
