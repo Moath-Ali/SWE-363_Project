@@ -33,6 +33,13 @@ app.get("/modules", (req, res) => {
 
 })
 
+app.get("/modulesAdmin", (req, res) => {
+    dbController.getAllPaths().then(data => {
+        res.render("modulesAdmin", { listOfPaths: data })
+    })
+
+})
+
 app.get("/modules/:path", async (req, res) => {
     //get the path name from params
     //get the article from the database using its name
