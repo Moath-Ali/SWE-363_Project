@@ -27,8 +27,9 @@ app.get("/", (req, res) => {
 })
 
 app.get("/modules", (req, res) => {
+    const user =req.cookies.user;
     dbController.getAllPaths().then(data => {
-        res.render("modules", { listOfPaths: data })
+        res.render("modules", { listOfPaths: data, user })
     })
 
 })
@@ -44,11 +45,12 @@ app.get("/modules/:path", async (req, res) => {
     //get the path name from params
     //get the article from the database using its name
     //render the article
+    const user =req.cookies.user;
     const pname = req.params.path
 
     dbController.getPathInfo(pname).then(e => {
         if (e)
-            res.render("path", { pathName: pname, intro: e.intro, article: e.article })
+            res.render("path", { pathName: pname, intro: e.intro, article: e.article,user })
         else res.redirect("/modules")
     })
 

@@ -50,6 +50,30 @@
             <%  }%> 
           </ul>
         </div>
+       
+        <% if (user === 'admin') {%>
+        <div>
+          <form method="POST" action = '/insertpath'>
+            <h2 style="color: aliceblue;">Add Path Name</h2>
+            <textarea name = 'name' id="pathName" cols="50" placeholder="Enter the path name" rows="50" style="display: block;"></textarea>
+            <br>
+ 
+            <h2 style="color: aliceblue;">Add Path Intro</h2>
+            <textarea name = 'intro' id="pathIntro" cols="50" placeholder="Enter the introduction for new module" rows="50" style="display: block;"></textarea>
+            <br>
+
+           <h2 style="color: aliceblue;">Add Path Article</h2>
+           <textarea name = 'article' id="pathArt" cols="50" placeholder="Enter the article for the new module" rows="50" style="display: block;"></textarea>
+           <br>
+
+           <h2 style="color: aliceblue;">Add Image link</h2>
+           <textarea  name = 'img' id="pathImg" cols="50" placeholder="Enter the image link for the new module" rows="50" style="display: block;"></textarea>
+           <br>
+
+            <button type="submit" class='submit' style="background-color: gray;">Add new module</button>
+          </form>
+        </div>
+      <%}%>
       </section>
 </body>
 <script type="module" src="/js/button_Handlers.js"></script>
