@@ -421,14 +421,13 @@ color: #0d6d8c;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #374151;
-  border-radius:50px;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
- 
-  
-   margin: 20px auto ; 
-
+  margin-left: auto; 
+  margin-right: auto; 
+  padding: 20px;
  }
  .stories_main{
   background-color: #1a1d23;
