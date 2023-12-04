@@ -64,4 +64,20 @@ router.post('/login', (req, res) => {
 
 });
 
+router.get('/logout', (req, res) => {
+  const sessionId = req.session.id;
+  const userEmail = req.session.user;
+
+  req.session.destroy((err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Internal Server Error');
+    }
+
+    res.clearCookie('Sid');
+    res.clearCookie('user');
+
+    res.redirect('/logout2'); 
+  });
+});
 module.exports = router;

@@ -112,6 +112,14 @@ app.get("/about-us", (req, res) => {
     res.render("about-us", { datas: "data" })
 })
 
+app.get("/logout", (req, res) => {
+    res.render("logout", { datas: "data" })
+})
+
+app.get("/logout2", (req, res) => {
+    res.render("logout", { datas: "data" })
+})
+
 app.get("/forum", (req, res) => {
     res.render("forum", { datas: "data" })
 })
