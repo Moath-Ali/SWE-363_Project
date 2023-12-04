@@ -58,12 +58,12 @@
       
     <div class="quiz-container">
         <% for(q of listOfQuest){ %>
-            <div class="question"> <%= q.Qno%>. <%=q.question%></div>
-            <div class="options">
-                <div class=<%=`option option${q.Qno}`%>>A. <%= q.a %></div>
-                <div class=<%=`option option${q.Qno}`%>>B. <%= q.b %></div>
-                <div class=<%=`option option${q.Qno}`%>>C. <%= q.c %></div>
-                <div class=<%=`option option${q.Qno}`%> id="last-option">D. <%= q.d %></div>
+            <div class="question" data-question=<%=`question${q.Qno}`%> > <%= q.Qno%>. <%=q.question%></div>
+            <div class="options" data-options=<%=`options${q.Qno}`%>>
+                <div class="option" onclick="selectOption(this)">A. <%= q.a %></div>
+                <div class="option" onclick="selectOption(this)">B. <%= q.b %></div>
+                <div class="option" onclick="selectOption(this)">C. <%= q.c %></div>
+                <div class="option" onclick="selectOption(this)" id="last-option">D. <%= q.d %></div>
             </div>
         <% } %>
         <% if(q.Qno === 19) {%> 
