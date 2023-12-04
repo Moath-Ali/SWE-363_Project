@@ -420,8 +420,8 @@ color: #0d6d8c;
   width: 600px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #374151;
-  border-radius: 50px;
+  /* background-color: #374151; */
+  /* border-radius: 50px; */
   display: flex;
   justify-content: center;
   align-items: center;
