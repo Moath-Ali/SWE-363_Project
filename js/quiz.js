@@ -8,7 +8,16 @@
 //             // resultDiv.textContent = `Selected Option: ${option.textContent}`;
 //           });
 //         });
+function progressBarScroll() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
+      height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
+      scrolled = (winScroll / height) * 100;
+  document.getElementById("progressBar").style.width = scrolled + "%";
+}
 
+window.onscroll = function () {
+  progressBarScroll();
+};
 let web = 0;
 let mobile = 0; 
 let data = 0;
