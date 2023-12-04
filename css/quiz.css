@@ -338,11 +338,11 @@ a{
     margin-bottom: 50px;
     margin-top:50px;
     text-align: center;
-    height: 8110px;
+    height: 8180px;
   }
   .quiz-btn{
     display: flex;
     justify-content: end;
-    margin-top: 50px;
+    margin-top: 10px;
   }
 }
