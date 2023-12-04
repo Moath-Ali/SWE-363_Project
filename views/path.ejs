@@ -12,10 +12,10 @@
   <%- include("partials/loader.ejs") %>
   <!-- pathName, and article are the two variables you can use in this page to get data 
     note: you should use the same tag used in article if you want to insert html elements into the page-->
-    <article class="ao7-article ao7-text-component">
+    <article class="ao7-article ao7-text-component" style="width: 70%; margin: 0 auto; margin-top: 2%;">
     <h1><%= pathName %></h1>
     <section><p><%- intro  %></p></section>
-    <article> <%- article %></article>
+    <%- article %>
   </article>
 
   <% if (user === 'admin') {%>
