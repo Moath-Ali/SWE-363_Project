@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
   <link rel="stylesheet" href="css\contact_us.css">
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("2WYkUTgTNyTMD1pgT");
+        })();
+    </script>
+    
 </head>
 <body>
   <div class="container">
@@ -89,17 +98,17 @@
     </div>
     </div>
     <div class="contact-form-container">
-    <form class="contact-form" action="https://formsubmit.co/f98273bf2db1855af0269dc83387d9c4" method="POST">
+    <form class="contact-form">
       <div class="form-header">Contact us</div>
       <input type="text" class="name-input" name="name" placeholder="First Name" id="name" required/>
       <input type="text" class="Subject" name="Subject" placeholder="Subject" id="Subject" required/>
       <input type="email" class="email-input"  name="email" placeholder="Email" id="email" required/>
-      <input type="hidden" name="_next" value="http://localhost:3000/contact-us-thank-you">
+      <!-- <input type="hidden" name="_next" value="http://localhost:3000/contact-us-thank-you"> -->
       <textarea name="message" cols="30" rows="5" class="message" placeholder="Message" id="message" required></textarea>
-      <button class="submit" type="submit">Submit</button>
+      <button class="submit" type="submit" onclick="sendMail()">Submit</button>
     </form>
       </div>
   </div>
-  
+  <script src="js/contact-us.js"></script>
 </body>
 </html>
