@@ -164,8 +164,13 @@ app.get("/quests/:questType/:quest", async (req, res) => {
     const questType = req.params.questType;
     const quest = req.params.quest;
     
+    dbController.getQuest(quest).then(data => {
+        if (data){
+            console.log(data)
+            res.render("quest", { quests: data,user })}
+        else res.redirect("/quests")
+    })
     
-    res.render("quest")
 })
 
 
