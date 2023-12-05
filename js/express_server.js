@@ -166,7 +166,6 @@ app.get("/quests/:questType/:quest", async (req, res) => {
     
     dbController.getQuest(quest).then(data => {
         if (data){
-            console.log(data)
             res.render("quest", { quests: data,user })}
         else res.redirect("/quests")
     })
