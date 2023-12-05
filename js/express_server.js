@@ -49,11 +49,6 @@ app.get("/modules/:path", async (req, res) => {
             res.render("path", { pathName: pname, intro: e.intro, article: e.article,user })
         else res.redirect("/modules")
     })
-
-
-
-
-
 })
 
 
@@ -143,8 +138,35 @@ app.get("/quiz-start", (req, res) => {
 
 })
 
+app.get("/quests",(req,res)=>{
+    const user =req.cookies.user;
+    dbController.getAllPaths().then(data => {
+        res.render("quests", { paths: data,user })
+    })
 
+})
 
+app.get("/quests/:questType", async (req, res) => {
+
+    const user =req.cookies.user;
+    const questType = req.params.questType;
+    
+    dbController.getQuestsType(questType).then(data => {
+        if (data){
+            res.render("questsType", { paths: data,user })}
+        else res.redirect("/quests")
+    })
+})
+
+app.get("/quests/:questType/:quest", async (req, res) => {
+
+    const user =req.cookies.user;
+    const questType = req.params.questType;
+    const quest = req.params.quest;
+    
+    
+    res.render("quest")
+})
 
 
 app.get("*/", (req, res) => {

@@ -35,13 +35,13 @@
           <ul class="feature-v8__sub-content fs9-grid fs9-gap-y-lg fs9-gap-lg@md">
             <% for(path of paths) { %>
                 <li class="fs9-col-4@md">
-                    <a href=<%=`/quests/${path.pathName}` %> class="card-v8 fs9-bg fs9-radius-lg" style="background-color: #4e566648;">
+                    <a href=<%=`/quests/${path.questName}/${path.questName}` %> class="card-v8 fs9-bg fs9-radius-lg" style="background-color: #4e566648;">
                       <figure>
-                        <img src=<%= path.imgSrc %> alt="Image description">
+                        <img src=<%= path.questImg %> alt="Image description">
                       </figure>
             
                       <footer class="fs9-padding-sm">
-                        <p class="fs9-text-sm fs9-color-contrast-medium fs9-margin-bottom-sm"><%=`${path.pathName}` %></p>
+                        <p class="fs9-text-sm fs9-color-contrast-medium fs9-margin-bottom-sm"><%=path.questName %></p>
                         <div class="fs9-text-component" style="text-align: justify;">
                           <h4><span class="card-v8__title" ><%= path.questIntro %></span></h4>
                         </div>

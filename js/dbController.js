@@ -109,6 +109,17 @@ function checkSID(SID){
     })
 }
 
+function getQuestsType(type){
+    return new Promise(function (resolve) {
+        db.all(`SELECT * from quest where questType = ?`,[type], (err, rows) => {
+            if (err) return console.log(err)
+            else {
+                resolve(rows);
+            }
+        })
+    })
+}
+
 // insertPath("Data_Analytics",`Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat optio illo repellendus aut? Quas assumenda tempore minus mollitia distinctio nisi, veritatis quae ducimus facere quod, incidunt atque reprehenderit nostrum.
 // Tempore hic molestiae doloribus, ducimus incidunt voluptatibus eligendi voluptas, in nihil quos tenetur illum inventore eius non, eum aliquam nisi facere consequuntur quia? Placeat nobis iste fuga sit ratione rem!`,
 // `this is the <em>actual article2</em> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat optio illo repellendus aut? Quas assumenda tempore minus mollitia distinctio nisi, veritatis quae ducimus facere quod, incidunt atque reprehenderit nostrum.
@@ -123,5 +134,6 @@ module.exports.saveSID = saveSID;
 module.exports.checkSID = checkSID;
 module.exports.checkUs = checkUs;
 module.exports.getAllQuest = getAllQuest;
+module.exports.getQuestsType = getQuestsType;
 
 
