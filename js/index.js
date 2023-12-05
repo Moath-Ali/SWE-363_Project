@@ -85,11 +85,18 @@ Util.toggleClass = function(el, className, bool) {
 	};
 }());
 
+
 function display() {
-  var x = document.getElementById("user-tag");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+  // y = document.getElementById("logout-card")
+  // if (y.style.display === "none") {
+  //   y.style.display = "block";
+  // } else {
+  //   y.style.display = "none";
+  // }
+	let contentDiv = document.getElementById("logout-card")
+	if (contentDiv.style.display === "none" || contentDiv.style.display === "") {
+		contentDiv.style.display = "block";
+	} else {
+		contentDiv.style.display = "none";
+	}
 }

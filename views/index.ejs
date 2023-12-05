@@ -79,11 +79,15 @@
                         
                         <i class="fa fa-user icon "></i>
                         <span class="name-of-user"><%-user%></span>
-                        <div class="log-out-btn-mob">
-                            <li class="header__item out-btn"><a href="register" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
-                        </div>
+                        <div class="log-out-card" id="logout-card">
+                          <li class="header__item out-btn"><a href="logout" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
+                      </div>
+                      <div class="log-out-btn-mob " id="logout-card">
+                        <li class="header__item out-btn"><a href="logout" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
+                    </div>
                         
                     </div>
+                    
                     
                     <%}%>
                     <%if(user===undefined){%>
