@@ -15,7 +15,7 @@ const pathImg= document.getElementById("pathImg")
 
 editButton.addEventListener("click",(e)=>{
 
-    fetch(`http://localhost:3000/getPath?name=${pName}`)
+    fetch(`/getPath?name=${pName}`)
     .then(res=>{
         return res.json()
     })
@@ -29,7 +29,7 @@ editButton.addEventListener("click",(e)=>{
 
 saveButton.addEventListener("click",sFunction)
 function sFunction(){
-    fetch(`http://localhost:3000/postPath?name=${pName}`,{
+    fetch(`/postPath?name=${pName}`,{
         method:"PUT",
         headers: {
             'Accept': 'application/json, text/plain, */*',

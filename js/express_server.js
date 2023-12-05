@@ -22,9 +22,10 @@ app.use(express_server_login);
 const dbController = require("./dbController")
 
 app.get("/", (req, res) => {
-    const user =req.cookies.user;
-    res.render("index", { datas: "<em>this is something</em>" , user})
+    const user= req.cookies.user;
+    res.render("index", { datas: "<em>this is something</em>" , user,html:""})
 })
+
 
 app.get("/modules", (req, res) => {
     const user =req.cookies.user;
@@ -141,6 +142,11 @@ app.get("/quiz-start", (req, res) => {
     res.render("quiz-start", { datas: "data" })
 
 })
+
+
+
+
+
 app.get("*/", (req, res) => {
     res.render("not-found", { datas: "data" })
 })

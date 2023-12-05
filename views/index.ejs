@@ -128,7 +128,7 @@
         
         
       </div>
-      
+
       <div class="introduction">
            Welcome to DevPath, your compass in the vast landscape of Computer Science and Software Engineering!
            Navigating the myriad career paths within these dynamic fields can be overwhelming, but fear not - DevPath is here to guide you on your journey.
@@ -189,8 +189,32 @@
           </div>
         </div>
       </footer>
-      <script src="js/index.js"></script>
-    </body>
+      
 
+
+
+
+
+      <% if(html !=undefined){ %>
+        <html>
+          <head>
+            <title>home</title>
+          </head>
+  
+          <body>
+            <div> <%- html %> </div>
+  
+            <form action="/play">
+              <input type="text" name="html" placeholder="write your code here">
+              <button>run</button>
+            </form>
+            
+          </body>
+        </html>
+        <% } %>
+     
+    </body>
+    <script src="js/index.js"></script>
     <script src="/js/screen-saver.js"></script>
+    <script src="/js/customPlayground.js"></script>
 </html>
