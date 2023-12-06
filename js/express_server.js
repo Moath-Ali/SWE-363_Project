@@ -140,7 +140,8 @@ app.post("/insertpath", (req, res) => {
 
 
 app.get("/about-us", (req, res) => {
-    res.render("about-us", { datas: "data" })
+    const user =req.cookies.user;
+    res.render("about-us", { datas: "data",user })
 })
 
 app.get("/logout", (req, res) => {
@@ -160,7 +161,8 @@ app.get("/stories", (req, res) => {
 
 })
 app.get("/contact-us", (req, res) => {
-    res.render("contact-us", { datas: "data" })
+    const user =req.cookies.user;
+    res.render("contact-us", { datas: "data",user })
 
 })
 app.get("/contact-us-thank-you", (req, res) => {
