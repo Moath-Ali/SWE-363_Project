@@ -50,7 +50,7 @@ app.post('/contact-us-thank-you', async (req, res) => {
     res.redirect('/contact-us-thank-you'); // You can customize this response
   } catch (error) {
     console.error('Error:', error);
-    res.status(500).send('Internal Server Error');
+    res.status(500).redirect('/error-500');
   }
 });
 
