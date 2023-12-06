@@ -137,6 +137,10 @@ app.get("/quiz-start", (req, res) => {
     res.render("quiz-start", { datas: "data" })
 
 })
+app.get("/quiz-end", (req, res) => {
+    res.render("quiz-end", { datas: "data" })
+
+})
 
 app.get("/quests",(req,res)=>{
     const user =req.cookies.user;

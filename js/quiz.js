@@ -103,7 +103,7 @@ function calc(){
   answers.forEach( a =>{
     ansLetter.push(a.innerText.charAt(0))
   })
-  
+
   for(let i = 0 ; i<20 ; i++){
     if(ansLetter[i]==='A'){
       ansLetter[i] = ans[i].A;
@@ -115,9 +115,11 @@ function calc(){
       ansLetter[i] = ans[i].C;
     }
     else if(ansLetter[i]==='D'){
+      // console.log(ans[i].D)
       ansLetter[i] = ans[i].D;
     }
   }
+  // console.log(ansLetter)
   ansLetter.forEach(e =>{
     if(e.includes(p1)){
       v1++;
@@ -158,10 +160,27 @@ function calc(){
   
 // console.log(r,p)
 let r =[v1,v2,v3,v4,v5,v6,v7]
+const max =Math.max(...r);
+// console.log(getAllIndexes(r,max))
 let p =[p1,p2,p3,p4,p5,p6,p7]
 // console.log(r)
-let ind = []
+let recPaths = []
+// console.log(r)
+// console.log(getAllIndexes(r,max))
+getAllIndexes(r,max).forEach(e=>{
+  recPaths.push(p[e]);
+})
+// console.log(ind)
+console.log(recPaths)
+}
 
-console.log(ind)
 
+function getAllIndexes(arr, value) {
+  let indexes = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === value) {
+      indexes.push(i);
+    }
+  }
+  return indexes;
 }
