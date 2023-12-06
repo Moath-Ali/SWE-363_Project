@@ -1,13 +1,17 @@
 html, body {
     background: #23272f;
-    margin: 0;
+ 
+    font-family: 'system-ui', sans-serif;
+    color: white;
+  }
+
+  .bodycontainer{
+    margin-top: 50px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'system-ui', sans-serif;
-    color: white;
   }
   
   .container {
