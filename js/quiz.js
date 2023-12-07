@@ -171,7 +171,26 @@ getAllIndexes(r,max).forEach(e=>{
   recPaths.push(p[e]);
 })
 // console.log(ind)
-console.log(recPaths)
+
+if(recPaths.length===1){
+  return recPaths[0];
+}
+else{
+  let resultPath = ""
+  for(let i = 0; i<recPaths.length; i++){
+    if(i!==recPaths.length-1){
+      resultPath = resultPath+recPaths[i]+",";
+    }
+    else{
+      resultPath = resultPath+recPaths[i];
+    }
+    
+    
+  }
+  return resultPath;
+}
+
+// console.log(recPaths)
 }
 
 
