@@ -60,7 +60,19 @@ const dbController = require("./dbController")
 app.get("/", (req, res) => {
 
     const user= req.cookies.user;
-    res.render("index", { datas: "<em>this is something</em>" , user,html:""})
+    if(user!==undefined){
+        dbController.getRecomPath(user).then(data=>{
+        
+            res.render("index", { datas: data[0].pathName , user,html:""})
+        })
+    }
+    else{
+        res.render("index", { datas:undefined,user,html:""})
+    }
+    
+        
+    
+    
 })
 
 
@@ -178,12 +190,14 @@ app.get("/quiz-start", (req, res) => {
 
 })
 app.use("/quiz-end", (req, res) => {
-    // const user =req.cookies.user;
-    // console.log(user)
-    // if(user.userName!==undefined){
-        
-    //     dbController.saveRecomPath(user,req.query.path)
-    // }
+    const user =req.cookies.user;
+    console.log(user)
+    
+    if(user!==undefined){
+        dbController.saveRecomPath(user,req.query.path)
+    }   
+    
+    
     
     res.render("quiz-end", {path:req.query.path})
     

@@ -12,7 +12,7 @@
 </head>
 <body>
     <%- include("partials/loader.ejs") %>
-    <!-- <h1 id="h1">this is the main page <%- datas %></h1>
+    <!-- <h1 id="h1">this is the main page </h1>
     <a href="/modules/path.ejs">link</a> -->
     <header class="header mf1-position-relative js-header ">
         <div class="header__container mf1-container mf1-max-width-lg">
@@ -121,13 +121,26 @@
     </div>
       <div class="intro">
         <div class="intro1">
-          <span class="first_intro"> Take the quiz <strong>NOW!</strong><br>and know the path <br>that is best for you </span>
+          <% if(datas!== undefined) {%>
+            <span class="first_intro"> Checkout the our content  
+              <br>and learn more about 
+              <br><b><%= datas %></b> </span>
           <!-- <P class="second_intro"> </P>
           <div></div>
           <p class="third_intro"></p>
           <div></div> -->
           <br>
-          <a href="quiz-start"><button class="quiz_button mf1-btn btn-style">Start!</button></a> 
+          <a href="modules"><button class="quiz_button mf1-btn btn-style">Paths</button></a> 
+            <% } else{%>
+              <span class="first_intro"> Take the quiz <strong>NOW!</strong><br>and know the path <br>that is best for you<%= datas %> </span>
+              <!-- <P class="second_intro"> </P>
+              <div></div>
+              <p class="third_intro"></p>
+              <div></div> -->
+              <br>
+              <a href="quiz-start"><button class="quiz_button mf1-btn btn-style">Start!</button></a>
+              <%}%>
+           
         </div>
         <img src="Resources/mainpage2.png" >
         
