@@ -8,6 +8,7 @@
 //             // resultDiv.textContent = `Selected Option: ${option.textContent}`;
 //           });
 //         });
+
 function progressBarScroll() {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
       height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
@@ -173,7 +174,14 @@ getAllIndexes(r,max).forEach(e=>{
 // console.log(ind)
 
 if(recPaths.length===1){
-  return recPaths[0];
+  fetch(`/quiz-end`,{
+    method:"PUT",
+    headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+    },
+    body:JSON.stringify({path:recPaths[0]})
+  });
 }
 else{
   let resultPath = ""
@@ -187,7 +195,14 @@ else{
     
     
   }
-  return resultPath;
+   fetch(`/quiz-end`,{
+    method:"PUT",
+    headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+    },
+    body:JSON.stringify({path:resultPath})
+  });
 }
 
 // console.log(recPaths)

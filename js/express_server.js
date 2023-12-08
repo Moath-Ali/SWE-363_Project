@@ -87,7 +87,11 @@ app.get("/modules/:path", async (req, res) => {
 })
 
 
-
+app.get("/quiz",(req,res)=>{
+    dbController.getAllQuest().then(data => {
+        res.render("quiz", { listOfQuest: data })
+    })
+})
 app.get("/quiz", (req, res) => {
     res.render("quiz", { datas: "data" })
 })
@@ -170,8 +174,9 @@ app.get("/quiz-start", (req, res) => {
     res.render("quiz-start", { datas: "data" })
 
 })
-app.get("/quiz-end", (req, res) => {
-    res.render("quiz-end", { datas: "data" })
+app.use("/quiz-end", (req, res) => {
+    console.log(req.body)
+    res.render("quiz-end", { data: req.body.path })
 
 })
 app.get("/error-500", (req, res) => {
