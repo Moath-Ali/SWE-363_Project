@@ -98,6 +98,7 @@ let v6 =0;
 let v7 =0;
 let flag = false;
 function calc(){
+  let link = document.getElementById('subt')
   let answers = document.querySelectorAll(".selected");
   let ansLetter = [];
   let anspath = [];
@@ -174,7 +175,8 @@ getAllIndexes(r,max).forEach(e=>{
 // console.log(ind)
 
 if(recPaths.length===1){
-  return recPaths[0]
+  link.href= "/quiz-end?path="+recPaths[0];
+  // return recPaths[0]
 }
 else{
   let resultPath = ""
@@ -188,7 +190,8 @@ else{
     
     
   }
-  return resultPath;
+  link.href= "/quiz-end?path="+recPaths;
+  // return resultPath;
 }
 
 // console.log(recPaths)
@@ -206,27 +209,61 @@ function getAllIndexes(arr, value) {
 }
 
 
-const express = require('express');
-const qRouter = express.Router();
+// const express = require('express');
+// const qRouter = express.Router();
 
-qRouter.use("/quiz-end",(req,res)=>{
+// qRouter.use("/quiz-end",(req,res)=>{
   
-  res.render("quiz-end",{path:calc()})
-})
+//   res.render("quiz-end",{path:calc()})
+// })
 
-const a = document.getElementById("subt");
 
-a.addEventListener("click",submit)
 
-function submit(){
+// const express = require('express');
+// const cookieParser = require('cookie-parser');
+// const app = express();
 
-  fetch(`/fuckT`,{
-    method:"POST",
-    headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-    },
-    body:JSON.stringify({path:calc()})
-  });
 
-}
+// app.use(cookieParser());
+
+// app.set('view engine', 'ejs');
+// app.use(express.static('public')); // Assuming your EJS file is in a 'public' directory
+
+
+
+// // Handle the button click and set the cookie on the server
+// app.post('/setcookie', (req, res) => {
+//     // Generate your string (you'll replace this with your logic)
+//     const generatedString = calc();
+
+//     // Set the string as a cookie on the server
+//     res.cookie('myCookie', generatedString, { maxAge: 900000});
+
+//     // Respond to the client
+//     res.send('Cookie set on the server successfully!');
+// });
+// app.get('/getcookie', (req, res) => {
+//   // Retrieve the value of the 'myCookie' cookie
+//   const cookieData = req.cookies.myCookie;
+
+//   // Display the cookie data
+//   res.send('Cookie data: ' + cookieData);
+// });
+
+// const a = document.getElementById("subt");
+
+// a.addEventListener("click",submit)
+
+// function submit(){
+
+//   fetch(`/fuckT`,{
+//     setcookie:cookie("quizCookie",calc(),{maxAge:9000000}),
+//     method:"POST",
+//     headers: {
+//         'Accept': 'application/json, text/plain, */*',
+//         'Content-Type': 'application/json'
+//     },
+//     body:JSON.stringify({path:calc()})
+//   });
+
+// }

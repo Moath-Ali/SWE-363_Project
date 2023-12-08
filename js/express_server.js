@@ -176,17 +176,24 @@ app.get("/quiz-start", (req, res) => {
 
 })
 app.use("/quiz-end", (req, res) => {
-
-
-
-    res.render("stories", { smth, l:"asd" })
-
+    // const user =req.cookies.user;
+    // if(user.userName!==undefined){
+        
+    //     dbController.saveRecomPath(user,req.query.path)
+    // }
+    
+    res.render("quiz-end", {path:req.query.path})
+    
 })
 app.get("/error-500", (req, res) => {
     res.render("error-500", { datas: "data" })
 
 })
-
+// app.post('/quiz', (req, res) => {
+//     const data = req.body.data;
+//     res.cookie('myCookie', data, { maxAge: 900000, httpOnly: true });
+    
+// });
 app.get("/quests",(req,res)=>{
     const user =req.cookies.user;
     dbController.getAllPaths().then(data => {
