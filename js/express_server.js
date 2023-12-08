@@ -179,6 +179,7 @@ app.get("/quiz-start", (req, res) => {
 })
 app.use("/quiz-end", (req, res) => {
     // const user =req.cookies.user;
+    // console.log(user)
     // if(user.userName!==undefined){
         
     //     dbController.saveRecomPath(user,req.query.path)

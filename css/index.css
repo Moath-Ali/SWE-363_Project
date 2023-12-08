@@ -461,7 +461,8 @@ color: #0d6d8c;
   position: absolute;
  border-radius: 20px;
   z-index: 3;
-  margin-right: 15px;
+  right: -70px;
+  margin-right: 50px;
   display: none;
 }
 .log-out-btn-mob{
