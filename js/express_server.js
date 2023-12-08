@@ -58,12 +58,14 @@ app.post('/contact-us-thank-you', async (req, res) => {
 const dbController = require("./dbController")
 
 app.get("/", (req, res) => {
+
     const user= req.cookies.user;
     res.render("index", { datas: "<em>this is something</em>" , user,html:""})
 })
 
 
 app.get("/modules", (req, res) => {
+    console.log(req.session.muath)
     const user =req.cookies.user;
     dbController.getAllPaths().then(data => {
         res.render("modules", { listOfPaths: data, user })
