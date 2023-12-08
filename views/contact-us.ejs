@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
-  <link rel="stylesheet" href="css\contact_us.css">
+  <link rel="stylesheet" href="css/contact_us.css">
+  <link rel="stylesheet" href="css/index.css">
+    <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
   <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
@@ -16,6 +20,117 @@
     
 </head>
 <body>
+
+    
+  <header class="header mf1-position-relative js-header ">
+    <div class="header__container mf1-container mf1-max-width-lg">
+      <div class="header__logo">
+        <a class="header__logo" href="/">
+          DevPath
+          <!-- <svg width="104" height="30" viewBox="0 0 104 30"><title>Go to homepage</title><path d="M37.54 24.08V3.72h4.92v16.37h8.47v4zM60.47 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8 8 0 015.64-2.18 8.07 8.07 0 015.68 2.2 8.49 8.49 0 012 5.69 8.63 8.63 0 01-1.78 5.38 7.6 7.6 0 01-5.89 2.49zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.79 3-2.79 4.26.32 4.23 2.82 4.23zM95.49 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8.4 8.4 0 0111.31 0 8.43 8.43 0 012 5.69 8.6 8.6 0 01-1.77 5.38 7.6 7.6 0 01-5.89 2.51zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.8 3-2.8 4.26.31 4.23 2.83 4.23zM77.66 30c-5.74 0-7-3.25-7.23-4.52l4.6-.26c.41.91 1.17 1.41 2.76 1.41a2.45 2.45 0 002.82-2.53v-2.68a7 7 0 01-1.7 1.75 6.12 6.12 0 01-5.85-.08c-2.41-1.37-3-4.25-3-6.66 0-.89.12-3.67 1.45-5.42a5.67 5.67 0 014.64-2.4c1.2 0 3 .25 4.46 2.82V8.81h4.85v15.33a5.2 5.2 0 01-2.12 4.32A9.92 9.92 0 0177.66 30zm.15-9.66c2.53 0 2.81-2.69 2.81-3.91s-.31-4-2.81-4-2.81 2.8-2.81 4 .27 3.91 2.81 3.91zM55.56 3.72h9.81v2.41h-9.81z" fill="hsl(var(--mf1-color-contrast-higher-hsl))"/><circle cx="15" cy="15" r="15" fill="hsl(var(--mf1-color-primary-hsl))"/></svg> -->
+        </a>
+      </div>
+  
+      <div class="mf1-btn mf1-btn--subtle header__trigger js-header__trigger" aria-label="Toggle menu" aria-expanded="false" aria-controls="header-nav">
+        <i class="header__trigger-icon" aria-hidden="true"></i>
+        <span>Menu</span>
+      </div>
+      <!-- <div class="dropdown">
+        <li>
+          <a>
+            Home
+          </a>
+        </li>
+        <li>
+          <a>
+            Path
+          </a>
+        </li>
+        <li>
+          <a>
+            Quiz
+          </a>
+        </li>
+        <li>
+          <a>
+            About us
+          </a>
+        </li>
+        <li>
+          <a>
+            Contact us
+          </a>
+        </li>
+        <li class="header__item"><a href="#0" class="header__nav-btn mf1-btn mf1-btn--primary">Log in</a></li>
+      </div> -->
+      <!-- <button class="mf1-btn mf1-btn--subtle header__trigger js-header__trigger" aria-label="Toggle menu" aria-expanded="false" aria-controls="header-nav">
+        
+      </button> -->
+  
+      <nav class="header__nav js-header__nav" id="header-nav" role="navigation" aria-label="Main">
+        <!-- <input type="checkbox" id="Check">
+        <label for="Check">
+          <i class="fas fa-bars"></i>
+        </label> -->
+        <div class="header__nav-inner">
+          
+          <ul class="header__list">
+            <li class="header__item"><a href="/" class="header__link">Home</a></li>
+            <li class="header__item"><a href="modules" class="header__link">Paths</a></li>
+            <li class="header__item"><a href="quests" class="header__link">Quests</a></li>
+            <li class="header__item"><a href="quiz-start" class="header__link">Quiz</a></li>
+            <li class="header__item"><a href="about-us" class="header__link">About us</a></li>
+            <li class="header__item"><a href="contact-us" class="header__link">Contact us</a></li>
+            <li class="header__item header__item--divider" aria-hidden="true"></li>
+            <% if(user!== undefined){%>
+
+                <div class="user-tag" onclick="display()">
+                    
+                    <i class="fa fa-user icon "></i>
+                    <span class="name-of-user"><%-user%></span>
+                    <div class="log-out-card" id="logout-card">
+                      <li class="header__item out-btn"><a href="logout" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
+                  </div>
+                  <div class="log-out-btn-mob " id="logout-card">
+                    <li class="header__item out-btn"><a href="logout" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
+                </div>
+                    
+                </div>
+                
+                
+                <%}%>
+                <%if(user===undefined){%>
+                    <li class="header__item"><a href="register" class="header__nav-btn mf1-btn mf1-btn--primary">Log in</a></li>
+
+                    <%}%>
+            <!-- 
+                
+                <div class="user-logged-in">
+                    <i class="fa fa-user"></i>
+                    <span class="name-of-user"></span>
+                </div>
+              -->
+             
+            <!-- <li class="header__item"><a><i class="fa-regular fa-user"></i></a></li> -->
+            <!-- <div class="ham_btn">
+              <i class="fa-solid fa-bars"></i>
+            </div> -->
+            <!-- <li class="header__item"><a href="#0" class="header__nav-btn mf1-btn mf1-btn--primary">sign up</a></li> -->  
+          </ul>
+        </div>
+      </nav>
+      
+    </div>
+</header>
+<div class="log-out-card"id="user-tag">
+    <div class="log-out-btn">
+        <li class="header__item out-btn"><a href="logout" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
+    </div>
+</div>
+
+
+
+<div class = bodycontainer>
   <div class="container">
     <div class="picture-container">
     <div class="picture">
@@ -98,17 +213,19 @@
     </div>
     </div>
     <div class="contact-form-container">
-    <form class="contact-form">
+    <form class="contact-form" method="post">
       <div class="form-header">Contact us</div>
       <input type="text" class="name-input" name="name" placeholder="First Name" id="name" required/>
       <input type="text" class="Subject" name="Subject" placeholder="Subject" id="Subject" required/>
       <input type="email" class="email-input"  name="email" placeholder="Email" id="email" required/>
       <!-- <input type="hidden" name="_next" value="http://localhost:3000/contact-us-thank-you"> -->
       <textarea name="message" cols="30" rows="5" class="message" placeholder="Message" id="message" required></textarea>
-      <button class="submit" type="submit" onclick="sendMail()">Submit</button>
+      <button class="submit" type="submit" id="sub">Submit</button>
     </form>
       </div>
   </div>
-  <script src="js/contact-us.js"></script>
+</div>
+  <script src="/js/contact-us.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
