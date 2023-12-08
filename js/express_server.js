@@ -174,9 +174,10 @@ app.get("/quiz-start", (req, res) => {
     res.render("quiz-start", { datas: "data" })
 
 })
-app.use("/quiz-end", (req, res) => {
-    console.log(req.body)
-    res.render("quiz-end", { data: req.body.path })
+app.use("/quiz-end",async (req, res) => {
+    const g = await req.body.path;
+
+    res.render("quiz-end", { g, l:"asd" })
 
 })
 app.get("/error-500", (req, res) => {
