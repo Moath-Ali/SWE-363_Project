@@ -172,6 +172,15 @@ app.get("/quests/:questType/:quest", async (req, res) => {
     
 })
 
+app.use("/saveRecomPath",(req,res)=>{
+    const user =req.cookies.user;
+    const paths = req.query.recomPaths.split(",")
+
+    for(path of paths){
+        dbController.saveRecomPath(user,path)
+    }
+    
+})
 
 app.get("*/", (req, res) => {
     res.render("not-found", { datas: "data" })
