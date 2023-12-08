@@ -220,7 +220,7 @@ a.addEventListener("click",submit)
 
 function submit(){
 
-  fetch(`/quiz-end`,{
+  fetch(`/fuckT`,{
     method:"POST",
     headers: {
         'Accept': 'application/json, text/plain, */*',

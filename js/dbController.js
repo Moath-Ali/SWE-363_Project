@@ -132,7 +132,7 @@ function getQuest(name){
 }
 
 function saveRecomPath(user,pathName){
-    db.run(`INSERT INTO recomPath(userName,pathName) VALUES(?,?)`, [user,pathName], (err) => {
+    db.run(`update recomPath set pathName = ? where userName = ?`, [pathName,user], (err) => {
         if (err) {
             return console.log(err.message);
         }

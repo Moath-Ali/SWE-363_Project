@@ -11,6 +11,7 @@ app.use(express.static(__dirname.substring(0, __dirname.length - 2) + ''));
 
 
 
+
 // needed for POST request
 
 const bodyParser = require("body-parser"); // Import the body-parser middleware
@@ -174,14 +175,10 @@ app.get("/quiz-start", (req, res) => {
     res.render("quiz-start", { datas: "data" })
 
 })
-app.use("/fuckT",(req,res)=>{
-    console.log(req.body)
-    req.session.data = req.body.path;
-    res.redirect("quiz-end")
-})
 app.use("/quiz-end", (req, res) => {
 
-    let smth = req.session.TE;
+
+
     res.render("stories", { smth, l:"asd" })
 
 })
