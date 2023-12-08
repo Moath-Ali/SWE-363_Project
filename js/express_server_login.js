@@ -7,13 +7,6 @@ var cookieParser = require('cookie-parser')
 router.use(cookieParser())
 
 //needed for saving the session of the user
-const session = require('express-session')
-router.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
 
 
 

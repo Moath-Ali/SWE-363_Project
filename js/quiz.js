@@ -174,14 +174,7 @@ getAllIndexes(r,max).forEach(e=>{
 // console.log(ind)
 
 if(recPaths.length===1){
-  fetch(`/quiz-end`,{
-    method:"PUT",
-    headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-    },
-    body:JSON.stringify({path:recPaths[0]})
-  });
+  return recPaths[0]
 }
 else{
   let resultPath = ""
@@ -195,14 +188,7 @@ else{
     
     
   }
-   fetch(`/quiz-end`,{
-    method:"PUT",
-    headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-    },
-    body:JSON.stringify({path:resultPath})
-  });
+  return resultPath;
 }
 
 // console.log(recPaths)
@@ -217,4 +203,30 @@ function getAllIndexes(arr, value) {
     }
   }
   return indexes;
+}
+
+
+const express = require('express');
+const qRouter = express.Router();
+
+qRouter.use("/quiz-end",(req,res)=>{
+  
+  res.render("quiz-end",{path:calc()})
+})
+
+const a = document.getElementById("subt");
+
+a.addEventListener("click",submit)
+
+function submit(){
+
+  fetch(`/quiz-end`,{
+    method:"POST",
+    headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+    },
+    body:JSON.stringify({path:calc()})
+  });
+
 }

@@ -174,10 +174,15 @@ app.get("/quiz-start", (req, res) => {
     res.render("quiz-start", { datas: "data" })
 
 })
-app.use("/quiz-end",async (req, res) => {
-    const g = await req.body.path;
+app.use("/fuckT",(req,res)=>{
+    console.log(req.body)
+    req.session.data = req.body.path;
+    res.redirect("quiz-end")
+})
+app.use("/quiz-end", (req, res) => {
 
-    res.render("quiz-end", { g, l:"asd" })
+    let smth = req.session.TE;
+    res.render("stories", { smth, l:"asd" })
 
 })
 app.get("/error-500", (req, res) => {
@@ -228,6 +233,7 @@ app.use("/saveRecomPath",(req,res)=>{
     }
     
 })
+
 
 app.get("*/", (req, res) => {
     res.render("not-found", { datas: "data" })
