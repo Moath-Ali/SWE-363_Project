@@ -4,7 +4,6 @@
     <%- include("partials/head.ejs") %>
     <link rel="stylesheet" href="/css/loader.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/stories.css">
     <link 
   href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
   rel="stylesheet"  type='text/css'>
@@ -67,7 +66,7 @@
             <div class="header__nav-inner">
               
               <ul class="header__list">
-                <li class="header__item"><a href="/" class="header__link">Home</a></li>
+                <li class="header__item"><a href="" class="header__link">Home</a></li>
                 <li class="header__item"><a href="modules" class="header__link">Paths</a></li>
                 <li class="header__item"><a href="quests" class="header__link">Quests</a></li>
                 <li class="header__item"><a href="quiz-start" class="header__link">Quiz</a></li>
@@ -80,15 +79,11 @@
                         
                         <i class="fa fa-user icon "></i>
                         <span class="name-of-user"><%-user%></span>
-                        <div class="log-out-card" id="logout-card">
-                          <li class="header__item out-btn"><a href="logout" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
-                      </div>
-                      <div class="log-out-btn-mob " id="logout-card">
-                        <li class="header__item out-btn"><a href="logout" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
-                    </div>
+                        <div class="log-out-btn-mob">
+                            <li class="header__item out-btn"><a href="register" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
+                        </div>
                         
                     </div>
-                    
                     
                     <%}%>
                     <%if(user===undefined){%>
@@ -127,7 +122,7 @@
           <p class="third_intro"></p>
           <div></div> -->
           <br>
-          <a href="quiz-start"><button class="quiz_button mf1-btn btn-style">Start!</button></a> 
+          <button class="quiz_button mf1-btn btn-style"><a href="quiz-start">Start!</a> </button>
         </div>
         <img src="Resources/mainpage2.png" >
         
@@ -151,35 +146,9 @@
           </span>
           
           <br>
-          <div class="stories">
-            
-            <ol class="stories__list">
-              <li class="stories__story">
-                <a href="#0" class="stories__img-wrapper">
-                  <figure>
-                    <img src="/Resources/cyber1.png" alt="Image description">
-                  </figure>
-                </a>
-          
-                <div class="stories__text sz3-text-component sz3-line-height-md sz3-text-gap-2xs">
-                  <h4 class="stories__headline"><a href="#0">It was going to be a lonely trip.</a></h4>
-                  <p class="stories__metadata"><time datetime="2020-05-10">November 28, 2023</time> </p>
-                </div>
-              </li>
-              <li class="stories__story">
-                <a href="#0" class="stories__img-wrapper">
-                  <figure>
-                    <img src="/Resources/data1.png" alt="Image description">
-                  </figure>
-                </a>
-          
-                <div class="stories__text sz3-text-component sz3-line-height-md sz3-text-gap-2xs">
-                  <h4 class="stories__headline"><a href="#0">I watched the storm, so beautiful yet terrific.</a></h4>
-                  <p class="stories__metadata"><time datetime="2020-05-10">December 8, 2023</time> </p>
-                </div>
-              </li>
-            </ol>
-          </div>
+          <button class="stories_btn mf1-btn btn-style">
+            explore
+          </button>     
         </span>
         
         <img src="Resources/mainpage3-removebg-preview.png" >

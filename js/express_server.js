@@ -2,8 +2,6 @@ const express = require("express");
 const app = express();
 const path = require("path")
 const express_server_login = require('./express_server_login');
-const nodemailer = require('nodemailer');
-
 const cookieParser = require('cookie-parser')
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname.substring(0, __dirname.length - 2), "views"))
@@ -19,40 +17,7 @@ app.use(bodyParser.json());
 app.use(express_server_login);
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); // Serve static files from the 'public' directory
 
-app.post('/contact-us-thank-you', async (req, res) => {
-  try {
-    // Extract form data
-    const { name, Subject,email, message } = req.body;
-
-    // Create a Nodemailer transporter
-    let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: 'devpath23@gmail.com', // Replace with your email address
-        pass: 'dejajndgrjbleqdz' // Replace with your email password or an app password
-      }
-    });
-
-    // Setup email data
-    let mailOptions = {
-      from: `${email}`,
-      to: 'devpath23@gmail.com', // Replace with the recipient's email address
-      subject: `${Subject}`,//'New Contact Form Submission',
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-    };
-
-    // Send email
-    await transporter.sendMail(mailOptions);
-
-    res.redirect('/contact-us-thank-you'); // You can customize this response
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).redirect('/error-500');
-  }
-});
 
 const dbController = require("./dbController")
 
@@ -140,8 +105,7 @@ app.post("/insertpath", (req, res) => {
 
 
 app.get("/about-us", (req, res) => {
-    const user =req.cookies.user;
-    res.render("about-us", { datas: "data",user })
+    res.render("about-us", { datas: "data" })
 })
 
 app.get("/logout", (req, res) => {
@@ -161,8 +125,7 @@ app.get("/stories", (req, res) => {
 
 })
 app.get("/contact-us", (req, res) => {
-    const user =req.cookies.user;
-    res.render("contact-us", { datas: "data",user })
+    res.render("contact-us", { datas: "data" })
 
 })
 app.get("/contact-us-thank-you", (req, res) => {
@@ -172,14 +135,6 @@ app.get("/contact-us-thank-you", (req, res) => {
 
 app.get("/quiz-start", (req, res) => {
     res.render("quiz-start", { datas: "data" })
-
-})
-app.get("/quiz-end", (req, res) => {
-    res.render("quiz-end", { datas: "data" })
-
-})
-app.get("/error-500", (req, res) => {
-    res.render("error-500", { datas: "data" })
 
 })
 

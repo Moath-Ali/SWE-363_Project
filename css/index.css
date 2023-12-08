@@ -448,28 +448,19 @@ color: #0d6d8c;
   position: absolute;
   right: 0%;
   z-index: 3; */
-  
-  
-  
-  text-align: center;
  
-  background-color: #374151;
-  width: 125px;
-  height: 70px;
-  
-  margin-top: 25px;
+  margin-top: 3px;
   position: absolute;
- border-radius: 20px;
+  right:0%;
   z-index: 3;
-  margin-right: 15px;
+  margin-right: 5px;
   display: none;
 }
 .log-out-btn-mob{
   display: none;
 }
 li.header__item.out-btn{
-  margin: auto;
-  margin-top: 15px;
+  margin: 0;
 
 }
 .log-out-btn{
