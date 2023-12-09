@@ -120,33 +120,57 @@ a{
     display: none;
   }
   .container{
-    width: 100%;
-    height: 90%;
+    width: 90%;
+    /* height: 700px; */
+    display: flex;
+    align-items: centers;
     
   }
   
   .submit{
     width: 100px;
+    box-sizing: border-box;
+    display: block;
+    width: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+    
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
   .name-input{
     width: 200px;
+    margin-bottom: 10px;
   }
   .Subject{
     width: 200px;
+    margin-bottom: 10px;
   }
   .email-input{
     width: 200px;
+    margin-bottom: 10px;
   }
   .message{
     width: 200px;
+    margin-bottom: 10px;
+    display: block;
+   
+    box-sizing: border-box;
+    margin-bottom: 10px;
   }
   .contact-form{
     display: flex;
     justify-content: space-around;
+    align-items: center;
   }
   .submit:hover {
     cursor: pointer;
     background: #2d8cab;
     transform: translateY(-2px);
   }
+  
+
+
 }
