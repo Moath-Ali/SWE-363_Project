@@ -210,7 +210,7 @@ body {
   margin-bottom: 50px;
   margin-top:50px;
   text-align: center;
-  height: 5550px;
+  /* height: 5550px; */
 }
 
 .question {
@@ -261,7 +261,8 @@ button{
 .quiz-btn{
   display: flex;
   justify-content: end;
-  margin-top: 100px;
+  margin-top: 10px;
+  /* margin-top: 100px; */
 }
 .mf1-btn {
   position: relative;
@@ -338,7 +339,7 @@ a{
     margin-bottom: 50px;
     margin-top:50px;
     text-align: center;
-    height: 8180px;
+    /* height: 8180px; */
   }
   .quiz-btn{
     display: flex;
