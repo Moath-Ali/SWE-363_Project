@@ -143,20 +143,26 @@ a{
   .name-input{
     width: 200px;
     margin-bottom: 10px;
+    color: black;
   }
   .Subject{
     width: 200px;
     margin-bottom: 10px;
+    color: black;
+
   }
   .email-input{
     width: 200px;
     margin-bottom: 10px;
+    color: black;
+
   }
   .message{
     width: 200px;
     margin-bottom: 10px;
     display: block;
-   
+    color: black;
+
     box-sizing: border-box;
     margin-bottom: 10px;
   }
