@@ -240,25 +240,25 @@ Usage: codyhouse.co/license
   .hiw-list__item::before {
     top: calc(var(--hiw-counter-size) + var(--hiw-line-stroke-width));
     height: calc(100% - var(--hiw-counter-size) - var(--hiw-line-stroke-width));
-    border-bottom: var(--hiw-line-stroke-width) dashed hsla(var(--hc4-color-primary-hsl), 0.25);
+    border-bottom: var(--hiw-line-stroke-width) dashed white;
   }
   .hiw-list__item::after {
     top: calc(100% - var(--hiw-line-stroke-width));
     height: calc(var(--hiw-items-gap-y)/2);
-    border-top: var(--hiw-line-stroke-width) dashed hsla(var(--hc4-color-primary-hsl), 0.25);
+    border-top: var(--hiw-line-stroke-width) dashed white;
   }
   .hiw-list__item:nth-child(2n+1) {
     padding-right: calc(var(--hiw-counter-size)/2);
   }
   .hiw-list__item:nth-child(2n+1)::before {
     left: calc(var(--hiw-counter-size)/2 - var(--hiw-line-stroke-width)/2);
-    border-left: var(--hiw-line-stroke-width) dashed hsla(var(--hc4-color-primary-hsl), 0.25);
+    border-left: var(--hiw-line-stroke-width) dashed white;
     border-bottom-left-radius: var(--hiw-line-border-radius);
   }
   .hiw-list__item:nth-child(2n+1)::after {
     left: 50%;
     border-top-right-radius: var(--hiw-line-border-radius);
-    border-right: var(--hiw-line-stroke-width) dashed hsla(var(--hc4-color-primary-hsl), 0.25);
+    border-right: var(--hiw-line-stroke-width) dashed white;
   }
   .hiw-list__item:nth-child(2n) {
     padding-left: calc(var(--hiw-counter-size)/2);
@@ -267,14 +267,14 @@ Usage: codyhouse.co/license
     flex-direction: row-reverse;
   }
   .hiw-list__item:nth-child(2n)::before {
-    border-right: var(--hiw-line-stroke-width) dashed hsla(var(--hc4-color-primary-hsl), 0.25);
+    border-right: var(--hiw-line-stroke-width) dashed white;
     right: calc(var(--hiw-counter-size)/2 - var(--hiw-line-stroke-width)/2);
     border-bottom-right-radius: var(--hiw-line-border-radius);
   }
   .hiw-list__item:nth-child(2n)::after {
     right: 50%;
     border-top-left-radius: var(--hiw-line-border-radius);
-    border-left: var(--hiw-line-stroke-width) dashed hsla(var(--hc4-color-primary-hsl), 0.25);
+    border-left: var(--hiw-line-stroke-width) dashed white;
   }
   .hiw-list__item:last-child::before, .hiw-list__item:last-child::after {
     display: none;
@@ -293,7 +293,7 @@ Usage: codyhouse.co/license
     display: flex;
     justify-content: center;
     align-items: center;
-    border: var(--hiw-line-stroke-width) solid hsla(var(--hc4-color-primary-hsl), 0.25);
+    border: var(--hiw-line-stroke-width) solid white;
     color: hsl(var(--hc4-color-primary-hsl));
     font-size: var(--hiw-counter-font-size);
   }

@@ -32,43 +32,10 @@
         <i class="header__trigger-icon" aria-hidden="true"></i>
         <span>Menu</span>
       </div>
-      <!-- <div class="dropdown">
-        <li>
-          <a>
-            Home
-          </a>
-        </li>
-        <li>
-          <a>
-            Path
-          </a>
-        </li>
-        <li>
-          <a>
-            Quiz
-          </a>
-        </li>
-        <li>
-          <a>
-            About us
-          </a>
-        </li>
-        <li>
-          <a>
-            Contact us
-          </a>
-        </li>
-        <li class="header__item"><a href="#0" class="header__nav-btn mf1-btn mf1-btn--primary">Log in</a></li>
-      </div> -->
-      <!-- <button class="mf1-btn mf1-btn--subtle header__trigger js-header__trigger" aria-label="Toggle menu" aria-expanded="false" aria-controls="header-nav">
-        
-      </button> -->
+
   
       <nav class="header__nav js-header__nav" id="header-nav" role="navigation" aria-label="Main">
-        <!-- <input type="checkbox" id="Check">
-        <label for="Check">
-          <i class="fas fa-bars"></i>
-        </label> -->
+
         <div class="header__nav-inner">
           
           <ul class="header__list">
@@ -150,7 +117,7 @@
           <ul class="feature-v8__sub-content fs9-grid fs9-gap-y-lg fs9-gap-lg@md">
             <% for(path of paths) { %>
                 <li class="fs9-col-4@md">
-                    <a href=<%=`/quests/${path.questName}/${path.questName}` %> class="card-v8 fs9-bg fs9-radius-lg" style="background-color: #4e566648;">
+                    <a href=<%=`/quests/${path.questName}/${path.questName}` %> class="card-v8 fs9-bg fs9-radius-lg" style="background-color: #434c5f;">
                       <figure>
                         <img src=<%= path.questImg %> alt="Image description">
                       </figure>

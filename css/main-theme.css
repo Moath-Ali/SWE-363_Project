@@ -26,6 +26,18 @@ a{
     color: #bbc5d8;
 }
 
+.hc4-container{
+    background-color: #373c46;
+    padding: 30px;
+    border: solid 1px #373c46;
+    border-radius: 30px;
+}
 
 
 
+
+
+.hiw-list__counter{
+    color: whitesmoke;
+    border-color: whitesmoke;
+}
