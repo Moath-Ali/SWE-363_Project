@@ -66,6 +66,9 @@ app.get("/", (req, res) => {
             res.render("index", { datas: data[0].pathName , user,html:""})
         })
     }
+    else if(user=== "admin" || (user!==undefined && dbController.getRecomPath(user).length===0)){
+        res.render("index", { datas:undefined,user,html:""})
+    }
     else{
         res.render("index", { datas:undefined,user,html:""})
     }
