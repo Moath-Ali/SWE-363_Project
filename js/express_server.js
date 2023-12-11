@@ -55,23 +55,35 @@ app.post('/contact-us-thank-you', async (req, res) => {
   }
 });
 
-const dbController = require("./dbController")
+const dbController = require("./dbController");
+const e = require("express");
 
 app.get("/", (req, res) => {
 
     const user= req.cookies.user;
-    if(user!==undefined){
-        dbController.getRecomPath(user).then(data=>{
-        
+    dbController.getRecomPath(user).then(data =>{
+        if(user==="admin"){
+            res.render("index", { datas:undefined,user,html:""})
+        }
+        else if(user!== undefined && data.length>0){
             res.render("index", { datas: data[0].pathName , user,html:""})
-        })
-    }
-    else if(user=== "admin" || (user!==undefined && dbController.getRecomPath(user).length===0)){
-        res.render("index", { datas:undefined,user,html:""})
-    }
-    else{
-        res.render("index", { datas:undefined,user,html:""})
-    }
+        }
+        else{
+            res.render("index", { datas:undefined,user,html:""})
+        }
+    })
+    // if(user!==undefined && dbController.getRecomPath(user).length>0 ){
+    //     dbController.getRecomPath(user).then(data=>{
+        
+    //         res.render("index", { datas: data[0].pathName , user,html:""})
+    //     })
+    // }
+    // else if(user=== "admin" || (user!==undefined && dbController.getRecomPath(user).length===0)){
+    //     res.render("index", { datas:undefined,user,html:""})
+    // }
+    // else{
+    //     res.render("index", { datas:undefined,user,html:""})
+    // }
     
         
     
