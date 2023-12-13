@@ -150,6 +150,17 @@ function getRecomPath(user){
         })
     })
 }
+
+function insertQuest(questType,questName,questImg,questIntro){
+    db.run(`insert into quest(questType,questName,questImg,questIntro) Values(?,?,?,?)`,[questType,questName,questImg,questIntro],(err,rows)=>{
+        if(err) console.log(err)
+    })
+}
+function insertSteps(questType,questName,stepHash,stepImg,stepTitle,stepContent){
+    db.run(`insert into steps Values(?,?,?,?,?,?)`,[questType,questName,stepHash,stepImg,stepTitle,stepContent],(err,rows)=>{
+        if(err) console.log(err)
+    })
+}
 // insertPath("Data_Analytics",`Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat optio illo repellendus aut? Quas assumenda tempore minus mollitia distinctio nisi, veritatis quae ducimus facere quod, incidunt atque reprehenderit nostrum.
 // Tempore hic molestiae doloribus, ducimus incidunt voluptatibus eligendi voluptas, in nihil quos tenetur illum inventore eius non, eum aliquam nisi facere consequuntur quia? Placeat nobis iste fuga sit ratione rem!`,
 // `this is the <em>actual article2</em> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat optio illo repellendus aut? Quas assumenda tempore minus mollitia distinctio nisi, veritatis quae ducimus facere quod, incidunt atque reprehenderit nostrum.
@@ -168,4 +179,6 @@ module.exports.getQuestsType = getQuestsType;
 module.exports.getQuest = getQuest;
 module.exports.saveRecomPath = saveRecomPath;
 module.exports.getRecomPath = getRecomPath;
+module.exports.insertQuest = insertQuest;
+module.exports.insertSteps = insertSteps;
 

@@ -3,7 +3,8 @@ const app = express();
 const path = require("path")
 const express_server_login = require('./express_server_login');
 const nodemailer = require('nodemailer');
-
+const bcrypt = require('bcryptjs');
+const saltRounds = 10;
 const cookieParser = require('cookie-parser')
 const https = require("https")
 app.set("view engine", "ejs")
@@ -269,6 +270,24 @@ app.use("/saveRecomPath",(req,res)=>{
     
 })
 
+app.get("/admin/addQuest",(req,res)=>{
+    console.log(req.body)
+    res.render("addQuest")
+})
+app.post("/addQuest",(req,res)=>{
+    const {questType, questName, questImg,questIntro,sTitle,sImg,sContent} = req.body;
+
+    dbController.insertQuest(questType,questName,questImg,questIntro)
+    bcrypt.hash(sTitle, saltRounds, (err, hash) => {
+        if (err) {
+           console.error(err);
+        }
+
+        dbController.insertSteps(questType,questName,hash,sImg,sTitle,sContent)
+
+      });
+    res.render("addQuest")
+})
 
 app.get("*/", (req, res) => {
     res.render("not-found", { datas: "data" })

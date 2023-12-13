@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("partials/head.ejs") %>
+        <link rel="stylesheet" href="/css/index.css">
+
+        <link rel="stylesheet" href="/css/addQuest.css">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+            type='text/css'>
+        <title>add quest</title>
+</head>
+
+<body>
+
+
+
+
+
+
+    <form action="/addQuest" method="post" style="width: 50%; margin: 5% auto;">
+        <fieldset class="fj3-margin-bottom-md fj3-padding-bottom-md fj3-border-bottom">
+            <div class="fj3-text-component fj3-margin-bottom-md fj3-text-center">
+                <h2>Add Quest</h2>
+            </div>
+
+            <div class="fj3-margin-bottom-xs">
+                <div class="fj3-grid fj3-gap-2xs fj3-items-center@md">
+                    <div class="fj3-col-4@md">
+                        <label class="fj3-form-label" for="firstName">Quest Type</label>
+                    </div>
+
+                    <div class="fj3-col-8@md">
+                        <input class="fj3-form-control fj3-width-100%" type="text" name="questType" id="firstName"
+                            required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fj3-margin-bottom-xs">
+                <div class="fj3-grid fj3-gap-2xs fj3-items-center@md">
+                    <div class="fj3-col-4@md">
+                        <label class="fj3-form-label" for="lastName">QuestName</label>
+                    </div>
+
+                    <div class="fj3-col-8@md">
+                        <input class="fj3-form-control fj3-width-100%" type="text" name="questName" id="lastName"
+                            required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fj3-margin-bottom-xs">
+                <div class="fj3-grid fj3-gap-2xs fj3-items-center@md">
+                    <div class="fj3-col-4@md">
+                        <label class="fj3-form-label" for="inputEmail">Quest Image</label>
+                    </div>
+
+                    <div class="fj3-col-8@md">
+                        <input class="fj3-form-control fj3-width-100%" type="text" name="questImg" id="inputEmail"
+                            required>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="fj3-grid fj3-gap-2xs fj3-items-center@md">
+                    <div class="fj3-col-4@md">
+                        <label class="fj3-form-label" for="textarea">Quest Intro</label>
+                    </div>
+
+                    <div class="fj3-col-8@md">
+                        <textarea class="fj3-form-control fj3-width-100%" name="questIntro" id="textarea"
+                            required></textarea>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="js-repeater" data-repeater-input-name="user[n]">
+            <ul class="rg7-grid rg7-gap-xs js-repeater__list">
+                <li class="js-repeater__item">
+                    <div class="rg7-flex rg7-gap-xs">
+                        <div class="fj3-margin-bottom-xs">
+                            <div class="fj3-grid fj3-gap-2xs fj3-items-center@md">
+                                <div class="fj3-col-4@md">
+                                    <label class="fj3-form-label" for="alastName">Step Title</label>
+                                </div>
+
+                                <div class="fj3-col-8@md">
+                                    <input class="fj3-form-control fj3-width-100%" type="text" name="sTitle"
+                                        id="alastName" required>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fj3-margin-bottom-xs">
+                            <div class="fj3-grid fj3-gap-2xs fj3-items-center@md">
+                                <div class="fj3-col-4@md">
+                                    <label class="fj3-form-label" for="slastName">Step Image</label>
+                                </div>
+
+                                <div class="fj3-col-8@md">
+                                    <input class="fj3-form-control fj3-width-100%" type="text" name="sImg"
+                                        id="slastName" required>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                        <div>
+                            <div class="fj3-grid fj3-gap-2xs fj3-items-center@md">
+                                <div class="fj3-col-4@md">
+                                    <label class="fj3-form-label" for="textarea">Step Content</label>
+                                </div>
+            
+                                <div class="fj3-col-8@md">
+                                    <textarea class="fj3-form-control fj3-width-100%" name="sContent" id="textarea"
+                                        required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    <button class="rg7-btn rg7-btn--subtle rg7-padding-x-xs js-repeater__remove fj3-border-bottom"
+                    type="button">
+                    <svg class="rg7-icon" viewBox="0 0 20 20">
+                        <title>Remove item</title>
+
+                        <g fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2">
+                            <line x1="1" y1="5" x2="19" y2="5" />
+                            <path d="M7,5V2A1,1,0,0,1,8,1h4a1,1,0,0,1,1,1V5" />
+                            <path
+                                d="M16,8l-.835,9.181A2,2,0,0,1,13.174,19H6.826a2,2,0,0,1-1.991-1.819L4,8" />
+                        </g>
+                    </svg>
+                </button>
+                </li>
+
+            </ul>
+
+            <button class="rg7-btn rg7-btn--primary rg7-width-100% rg7-margin-top-xs js-repeater__add" type="button">+
+                Add
+                Item</button>
+        </div>
+
+
+
+        <div class="fj3-text-center">
+            <button class="fj3-btn fj3-btn--primary" style="margin: 10px auto;">Submit</button>
+        </div>
+    </form>
+
+</body>
+<script src="/js/addQuest.js"></script>
+
+</html>
