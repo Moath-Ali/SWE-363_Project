@@ -1206,3 +1206,8 @@ Usage: codyhouse.co/license
       grid-column-end: span 4;
     }
   }
+
+
+  div ul li a figure img{
+    padding: 10px;
+  }
