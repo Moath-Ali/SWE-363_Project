@@ -17,11 +17,11 @@ Usage: codyhouse.co/license
     padding: 0;
     border: 0;
   }
-  
+ 
   body {
-    background-color: hsl(0, 0%, 100%);
+    background-color: #23272f;
     font-family: system-ui, sans-serif;
-    color: hsl(230, 7%, 23%);
+    color: white;
     font-size: 1rem;
   }
   
@@ -54,7 +54,7 @@ Usage: codyhouse.co/license
   button, input, textarea, select {
     background-color: transparent;
     border-radius: 0;
-    color: inherit;
+    color: black;
     line-height: inherit;
     appearance: none;
   }
@@ -66,7 +66,7 @@ Usage: codyhouse.co/license
   }
   
   a {
-    color: hsl(250, 84%, 54%);
+    color: #0d6d8c;;
   }
   
   table {
@@ -142,7 +142,7 @@ Usage: codyhouse.co/license
     font-size: 1em;
     white-space: nowrap;
     text-decoration: none;
-    background: hsl(var(--rg7-color-bg-dark-hsl));
+    background: #0d6d8c;;
     color: hsl(var(--rg7-color-contrast-higher-hsl));
     cursor: pointer;
     text-decoration: none;
@@ -156,7 +156,7 @@ Usage: codyhouse.co/license
   }
   
   .rg7-btn:focus-visible {
-    box-shadow: 0px 0px 0px 2px hsl(var(--rg7-color-bg-hsl)), 0px 0px 0px 4px hsla(var(--rg7-color-contrast-higher-hsl), 0.15);
+    box-shadow: 0px 0px 0px 2px hsl(white), 0px 0px 0px 4px hsla(white, 0.15);
     outline: none;
   }
   
@@ -165,28 +165,28 @@ Usage: codyhouse.co/license
   }
   
   .rg7-btn--primary {
-    background: hsl(var(--rg7-color-primary-hsl));
-    color: hsl(var(--rg7-color-white-hsl));
-    box-shadow: inset 0px 1px 0px hsla(var(--rg7-color-white-hsl), 0.15), 0px 1px 3px hsla(var(--rg7-color-primary-darker-hsl), 0.25), 0px 2px 6px hsla(var(--rg7-color-primary-darker-hsl), 0.1), 0px 6px 10px -2px hsla(var(--rg7-color-primary-darker-hsl), 0.25);
+    background: #0d6d8c;;
+    color: white;
+    box-shadow: inset 0px 1px 0px hsla(white, 0.15), 0px 1px 3px hsla(white, 0.25), 0px 2px 6px hsla(white, 0.1), 0px 6px 10px -2px hsla(white, 0.25);
   }
   
   .rg7-btn--primary:hover {
-    background: hsl(var(--rg7-color-primary-light-hsl));
-    box-shadow: inset 0px 1px 0px hsla(var(--rg7-color-white-hsl), 0.15), 0px 1px 2px hsla(var(--rg7-color-primary-darker-hsl), 0.25), 0px 1px 4px hsla(var(--rg7-color-primary-darker-hsl), 0.1), 0px 3px 6px -2px hsla(var(--rg7-color-primary-darker-hsl), 0.25);
+    background: #0d6d8c;
+    box-shadow: inset 0px 1px 0px hsla(white, 0.15), 0px 1px 2px hsla(white, 0.25), 0px 1px 4px hsla(white, 0.1), 0px 3px 6px -2px hsla(white, 0.25);
   }
   
   .rg7-btn--primary:focus {
-    box-shadow: inset 0px 1px 0px hsla(var(--rg7-color-white-hsl), 0.15), 0px 1px 2px hsla(var(--rg7-color-primary-darker-hsl), 0.25), 0px 1px 4px hsla(var(--rg7-color-primary-darker-hsl), 0.1), 0px 3px 6px -2px hsla(var(--rg7-color-primary-darker-hsl), 0.25), 0px 0px 0px 2px hsl(var(--rg7-color-bg-hsl)), 0px 0px 0px 4px hsl(var(--rg7-color-primary-hsl));
+    box-shadow: inset 0px 1px 0px hsla(white, 0.15), 0px 1px 2px hsla(white, 0.25), 0px 1px 4px hsla(white, 0.1), 0px 3px 6px -2px hsla(white, 0.25), 0px 0px 0px 2px hsl(white), 0px 0px 0px 4px hsl(white);
   }
   
   .rg7-btn--subtle {
-    background: hsl(var(--rg7-color-bg-lighter-hsl));
-    color: hsl(var(--rg7-color-contrast-higher-hsl));
+    background: #0d6d8c;
+    color: black;
     box-shadow: inset 0px 1px 0px hsla(var(--rg7-color-white-hsl), 0.1), 0px 0px 0px 1px hsla(var(--rg7-color-black-hsl), 0.02), 0px 1px 3px -1px hsla(var(--rg7-color-black-hsl), 0.2), 0 0.3px 0.4px rgba(0, 0, 0, 0.025),0 0.9px 1.5px rgba(0, 0, 0, 0.05), 0 3.5px 6px rgba(0, 0, 0, 0.1);
   }
   
   .rg7-btn--subtle:hover {
-    background: hsl(var(--rg7-color-bg-light-hsl));
+    background: #0d6d8c;
     box-shadow: inset 0px 1px 0px hsla(var(--rg7-color-white-hsl), 0.1), 0px 0px 0px 1px hsla(var(--rg7-color-black-hsl), 0.02), 0px 1px 3px -1px hsla(var(--rg7-color-black-hsl), 0.2), 0 0.1px 0.3px rgba(0, 0, 0, 0.06),0 1px 2px rgba(0, 0, 0, 0.12);
   }
   
@@ -290,15 +290,15 @@ Usage: codyhouse.co/license
   }
   
   body {
-    background-color: hsl(0, 0%, 100%);
+    background-color: #23272f;
     font-family: system-ui, sans-serif;
-    color: hsl(230, 7%, 23%);
+    color: white;
     font-size: 1rem;
   }
   
   h1, h2, h3, h4 {
     line-height: 1.2;
-    color: hsl(230, 13%, 9%);
+    color: white;
     font-weight: 700;
   }
   
@@ -325,7 +325,7 @@ Usage: codyhouse.co/license
   button, input, textarea, select {
     background-color: transparent;
     border-radius: 0;
-    color: inherit;
+    color: black;
     line-height: inherit;
     appearance: none;
   }
@@ -337,7 +337,7 @@ Usage: codyhouse.co/license
   }
   
   a {
-    color: hsl(250, 84%, 54%);
+    color: #0d6d8c;
   }
   
   table {
@@ -426,8 +426,8 @@ Usage: codyhouse.co/license
     font-size: 1em;
     white-space: nowrap;
     text-decoration: none;
-    background: hsl(var(--fj3-color-bg-dark-hsl));
-    color: hsl(var(--fj3-color-contrast-higher-hsl));
+    background: #0d6d8c;;
+    color: white;
     cursor: pointer;
     text-decoration: none;
     line-height: 1.2;
@@ -440,7 +440,7 @@ Usage: codyhouse.co/license
   }
   
   .fj3-btn:focus-visible {
-    box-shadow: 0px 0px 0px 2px hsl(var(--fj3-color-bg-hsl)), 0px 0px 0px 4px hsla(var(--fj3-color-contrast-higher-hsl), 0.15);
+    box-shadow: 0px 0px 0px 2px hsl(white), 0px 0px 0px 4px hsla(white, 0.15);
     outline: none;
   }
   
@@ -449,18 +449,18 @@ Usage: codyhouse.co/license
   }
   
   .fj3-btn--primary {
-    background: hsl(var(--fj3-color-primary-hsl));
+    background: #0d6d8c;;
     color: hsl(var(--fj3-color-white-hsl));
     box-shadow: inset 0px 1px 0px hsla(var(--fj3-color-white-hsl), 0.15), 0px 1px 3px hsla(var(--fj3-color-primary-darker-hsl), 0.25), 0px 2px 6px hsla(var(--fj3-color-primary-darker-hsl), 0.1), 0px 6px 10px -2px hsla(var(--fj3-color-primary-darker-hsl), 0.25);
   }
   
   .fj3-btn--primary:hover {
-    background: hsl(var(--fj3-color-primary-light-hsl));
+    background: #0d6d8c;;
     box-shadow: inset 0px 1px 0px hsla(var(--fj3-color-white-hsl), 0.15), 0px 1px 2px hsla(var(--fj3-color-primary-darker-hsl), 0.25), 0px 1px 4px hsla(var(--fj3-color-primary-darker-hsl), 0.1), 0px 3px 6px -2px hsla(var(--fj3-color-primary-darker-hsl), 0.25);
   }
   
   .fj3-btn--primary:focus {
-    box-shadow: inset 0px 1px 0px hsla(var(--fj3-color-white-hsl), 0.15), 0px 1px 2px hsla(var(--fj3-color-primary-darker-hsl), 0.25), 0px 1px 4px hsla(var(--fj3-color-primary-darker-hsl), 0.1), 0px 3px 6px -2px hsla(var(--fj3-color-primary-darker-hsl), 0.25), 0px 0px 0px 2px hsl(var(--fj3-color-bg-hsl)), 0px 0px 0px 4px hsl(var(--fj3-color-primary-hsl));
+    box-shadow: inset 0px 1px 0px hsla(var(--fj3-color-white-hsl), 0.15), 0px 1px 2px hsla(#0d6d8c, 0.25), 0px 1px 4px hsla(#0d6d8c, 0.1), 0px 3px 6px -2px hsla(#0d6d8c, 0.25), 0px 0px 0px 2px hsl(#0d6d8c), 0px 0px 0px 4px hsl(#0d6d8c);
   }
   
   /* form elements */
@@ -481,7 +481,7 @@ Usage: codyhouse.co/license
   
   .fj3-form-control:focus, .fj3-form-control:focus-within {
     background: hsl(var(--fj3-color-bg-hsl));
-    box-shadow: inset 0px 0px 0px 1px hsla(var(--fj3-color-contrast-lower-hsl), 0), 0px 0px 0px 2px hsl(var(--fj3-color-primary-hsl)), 0 0.3px 0.4px rgba(0, 0, 0, 0.025),0 0.9px 1.5px rgba(0, 0, 0, 0.05), 0 3.5px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 0px 0px 1px #0d6d8c, 0px 0px 0px 2px #0d6d8c, 0 0.3px 0.4px rgba(0, 0, 0, 0.025),0 0.9px 1.5px rgba(0, 0, 0, 0.05), 0 3.5px 6px rgba(0, 0, 0, 0.1);
     outline: none;
   }
   
