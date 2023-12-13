@@ -3,12 +3,14 @@
     "start": "node ./js/express_server.js"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "https": "^1.0.0",
     "nodemailer": "^6.9.7",
     "nodemon": "^3.0.1",
     "passport": "^0.6.0",
