@@ -278,14 +278,17 @@ app.post("/addQuest",(req,res)=>{
     const {questType, questName, questImg,questIntro,sTitle,sImg,sContent} = req.body;
 
     dbController.insertQuest(questType,questName,questImg,questIntro)
-    bcrypt.hash(sTitle, saltRounds, (err, hash) => {
-        if (err) {
-           console.error(err);
-        }
+    for(let i=0;i<sTitle.length;i++){
+        bcrypt.hash(sTitle[i], saltRounds, (err, hash) => {
+            if (err) {
+               console.error(err);
+            }
+    
+            dbController.insertSteps(questType,questName,hash,sImg[i],sTitle[i],sContent[i])
+    
+          });
+    }
 
-        dbController.insertSteps(questType,questName,hash,sImg,sTitle,sContent)
-
-      });
     res.render("addQuest")
 })
 
