@@ -289,6 +289,11 @@ app.post("/addQuest",(req,res)=>{
 
     res.redirect("/")
 })
+app.post("/insert",(req,res)=>{
+    dbController.addEndPoint(req.body)
+    console.log(req.body)
+})
+
 
 app.get("*/", (req, res) => {
     res.render("not-found", { datas: "data" })

@@ -16,7 +16,8 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "sequelize": "^6.33.0",
-    "sqlite3": "^5.1.6"
+    "sqlite3": "^5.1.6",
+    "web-push": "^3.6.6"
   },
   "name": "swe-363_project",
   "description": "",

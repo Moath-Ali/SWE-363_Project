@@ -2,6 +2,7 @@ const sqlite3 = require('sqlite3').verbose();
 let temp = __dirname.substring(0, __dirname.length - 2);
 let db = new sqlite3.Database(`${temp}/db.db`)
 let s = [];
+
 //user = Username password subscribedPath RecommendedPath Email SessionID
 // db.run(`CREATE TABLE user 
 // (userName char Primary key, email char key, password char Not Null, subPath char, recomPath char, SID char)`)
@@ -18,6 +19,18 @@ let s = [];
 
 // db.run("DROP TABLE path")
 
+
+process.env['VAPID_PUBLIC_KEY'] = 'BI-zXHGtNEN1e_YL9qVKwGJTcRqdSGiqTsJ5OlaCiuEI2akHga9woMc3SfW2CcMXm-ytipD8XWZ7ODciyvXoBvo'
+process.env['VAPID_PRIVATE_KEY']= 'gTyUW-QzuqKBs5GuQXj_k7b0qhu80VJ3Orc6oHqFiL4'
+const webPush = require("web-push");
+webPush.setVapidDetails(
+    "https://example.com/",
+    process.env.VAPID_PUBLIC_KEY,
+    process.env.VAPID_PRIVATE_KEY
+  );
+  
+
+
 function insertUser(userName, email, password, subPath = "", recomPath = "") {
     db.run(`INSERT INTO user(userName, email, password, subPath, recomPath) VALUES(?,?,?,?,?)`, [userName, email, password, subPath, recomPath], (err) => {
         if (err) {
@@ -28,6 +41,7 @@ function insertUser(userName, email, password, subPath = "", recomPath = "") {
 }
 
 function insertPath(pathName, intro, article, imgSrc) {
+    psuhAllNotifications()
     db.run(`INSERT INTO path(pathName,intro , article, imgSrc) VALUES(?,?,?,?)`, [pathName, intro, article, imgSrc], (err) => {
         if (err) {
             return console.log(err.message);
@@ -152,6 +166,7 @@ function getRecomPath(user){
 }
 
 function insertQuest(questType,questName,questImg,questIntro){
+    psuhAllNotifications()
     db.run(`insert into quest(questType,questName,questImg,questIntro) Values(?,?,?,?)`,[questType,questName,questImg,questIntro],(err,rows)=>{
         if(err) console.log(err)
     })
@@ -170,6 +185,77 @@ function getSteps(questType,questName){
             }
         })
     })
+}
+
+async function addEndPoint(subscription){
+    return new Promise(function (resolve) {
+        let j=Object.values(subscription.key)
+        
+        db.all(`INSERT INTO webuser values(?,?,?)`,[subscription.sub.endpoint,subscription.sub.keys.auth,subscription.sub.keys.p256dh],(err,res)=>{
+            if(err) console.log("err")
+            resolve(1)
+        })
+
+    })
+}
+
+async function psuhAllNotifications(){
+    db.all(`SELECT * from webuser `,(err,res)=>{
+    
+        if(err) console.log(err)
+        let row=res
+    
+        for (let i = 0; i < row.length; i++) {
+           
+            // encode=row[i].encodedVap.map((j)=>parseInt(j))
+            subscription={
+                endpoint:row[i].endPoint,
+                expirationTime: null,
+                keys:{
+                    p256dh:row[i].p256dh,
+                    auth:row[i].auth
+                }
+                ,
+                options:{
+                    userVisibileOnly: true,
+                    // applicationServerKey:encode
+                }
+
+            }
+            console.log(subscription)
+            pushNotification(subscription).then(()=>console.log('pushed'))
+        }
+    })
+
+}
+async function pushNotification(subscription){
+            
+            // console.log(row+'uhaiufoiuasbfuhabrvfiasiufwewefhfsbfokjfewai')
+            const payload = {
+                    title : "Alert",
+                    body : "Added content to the website",
+                    tag : "123",
+                    clickUrl : "https://google.com"
+            };
+            console.log(payload)
+            const options = {
+                TTL: 5,
+              };
+        setTimeout(function () {
+            webPush
+            .sendNotification(subscription, JSON.stringify(payload), options)
+            .then(function () {
+            console.log(JSON.stringify(payload))
+           
+          })
+          .catch(function (error) {
+           
+            console.log(error);
+          });
+      }, 1 * 1000);
+        
+        return 1
+    
 }
 // insertPath("Data_Analytics",`Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat optio illo repellendus aut? Quas assumenda tempore minus mollitia distinctio nisi, veritatis quae ducimus facere quod, incidunt atque reprehenderit nostrum.
 // Tempore hic molestiae doloribus, ducimus incidunt voluptatibus eligendi voluptas, in nihil quos tenetur illum inventore eius non, eum aliquam nisi facere consequuntur quia? Placeat nobis iste fuga sit ratione rem!`,
@@ -192,4 +278,6 @@ module.exports.getRecomPath = getRecomPath;
 module.exports.insertQuest = insertQuest;
 module.exports.insertSteps = insertSteps;
 module.exports.getSteps = getSteps;
+module.exports.addEndPoint = addEndPoint;
+module.exports.psuhAllNotifications = psuhAllNotifications;
 
