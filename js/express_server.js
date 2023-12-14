@@ -251,9 +251,7 @@ app.get("/quests/:questType/:quest", async (req, res) => {
     const user =req.cookies.user;
     const questType = req.params.questType;
     const quest = req.params.quest;
-    console.log(questType,quest)
     dbController.getQuest(quest).then(data => {
-
         dbController.getSteps(questType,quest).then(data1=>{
             res.render("quest", { quests: data,user,steps:data1 })
         })
@@ -289,7 +287,7 @@ app.post("/addQuest",(req,res)=>{
           });
     }
 
-    res.render("addQuest")
+    res.redirect("/")
 })
 
 app.get("*/", (req, res) => {
