@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/css/quests.css">
   <link rel="stylesheet" href="/css/loader.css">
   <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/addQuest.css">
   <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
     type='text/css'>
   <%- include('./partials/head.ejs') %>
@@ -136,6 +137,13 @@
 
         </ul>
       </div>
+      
+      <% if(user==="admin"){ %>
+        <div class="fs9-container fs9-max-width-adaptive-lg" style="display: flex; justify-content: center; align-items: center;">
+          <button class="fj3-btn fj3-btn--primary" style="margin: 10px auto;"><a href="/admin/addQuest" >Add Quest</a></button>
+
+        </div>
+        <% } %>
     </section>
 </body>
 <script src="js/index.js"></script>
