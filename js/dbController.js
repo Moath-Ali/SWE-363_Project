@@ -237,7 +237,6 @@ async function pushNotification(subscription){
                     tag : "123",
                     clickUrl : "https://google.com"
             };
-            console.log(payload)
             const options = {
                 TTL: 5,
               };

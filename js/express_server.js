@@ -274,16 +274,17 @@ app.get("/admin/addQuest",(req,res)=>{
     console.log(req.body)
     res.render("addQuest")
 })
-app.post("/addQuest",(req,res)=>{
+app.post("/addQuest",async (req,res)=>{
     const {questType, questName, questImg,questIntro,sTitle,sImg,sContent} = req.body;
 
     dbController.insertQuest(questType,questName,questImg,questIntro)
     for(let i=0;i<sTitle.length;i++){
-        bcrypt.hash(sTitle[i], saltRounds, (err, hash) => {
+        console.log(sTitle)
+        bcrypt.hash(sTitle[i], saltRounds, async (err, hash) => {
             if (err) {
                console.error(err);
             }
-            dbController.insertSteps(questType,questName,hash,sImg[i],sTitle[i],sContent[i])
+            let s = await dbController.insertSteps(questType,questName,hash,sImg[i],sTitle[i],sContent[i])
           });
     }
 
@@ -291,7 +292,6 @@ app.post("/addQuest",(req,res)=>{
 })
 app.post("/insert",(req,res)=>{
     dbController.addEndPoint(req.body)
-    console.log(req.body)
 })
 
 
