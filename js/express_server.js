@@ -241,7 +241,7 @@ app.get("/quests/:questType", async (req, res) => {
     
     dbController.getQuestsType(questType).then(data => {
         if (data){
-            res.render("questsType", { paths: data,user })}
+            res.render("questsType", { paths: data,user,questType })}
         else res.redirect("/quests")
     })
 })
@@ -251,11 +251,13 @@ app.get("/quests/:questType/:quest", async (req, res) => {
     const user =req.cookies.user;
     const questType = req.params.questType;
     const quest = req.params.quest;
-    
+    console.log(questType,quest)
     dbController.getQuest(quest).then(data => {
-        if (data){
-            res.render("quest", { quests: data,user })}
-        else res.redirect("/quests")
+
+        dbController.getSteps(questType,quest).then(data1=>{
+            res.render("quest", { quests: data,user,steps:data1 })
+        })
+           
     })
     
 })
@@ -283,9 +285,7 @@ app.post("/addQuest",(req,res)=>{
             if (err) {
                console.error(err);
             }
-    
             dbController.insertSteps(questType,questName,hash,sImg[i],sTitle[i],sContent[i])
-    
           });
     }
 

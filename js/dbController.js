@@ -161,6 +161,16 @@ function insertSteps(questType,questName,stepHash,stepImg,stepTitle,stepContent)
         if(err) console.log(err)
     })
 }
+function getSteps(questType,questName){
+    return new Promise(function (resolve) {
+        db.all(`SELECT * from steps where questType = ? AND questName = ?`,[questType,questName], (err, rows) => {
+            if (err) return console.log(err)
+            else {
+                resolve(rows);
+            }
+        })
+    })
+}
 // insertPath("Data_Analytics",`Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat optio illo repellendus aut? Quas assumenda tempore minus mollitia distinctio nisi, veritatis quae ducimus facere quod, incidunt atque reprehenderit nostrum.
 // Tempore hic molestiae doloribus, ducimus incidunt voluptatibus eligendi voluptas, in nihil quos tenetur illum inventore eius non, eum aliquam nisi facere consequuntur quia? Placeat nobis iste fuga sit ratione rem!`,
 // `this is the <em>actual article2</em> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repellat optio illo repellendus aut? Quas assumenda tempore minus mollitia distinctio nisi, veritatis quae ducimus facere quod, incidunt atque reprehenderit nostrum.
@@ -181,4 +191,5 @@ module.exports.saveRecomPath = saveRecomPath;
 module.exports.getRecomPath = getRecomPath;
 module.exports.insertQuest = insertQuest;
 module.exports.insertSteps = insertSteps;
+module.exports.getSteps = getSteps;
 

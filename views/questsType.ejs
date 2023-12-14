@@ -113,7 +113,7 @@
         <ul class="feature-v8__sub-content fs9-grid fs9-gap-y-lg fs9-gap-lg@md">
           <% for(path of paths) { %>
             <li class="fs9-col-4@md">
-              <a href=<%=`/quests/${path.questName}/${path.questName}` %> class="card-v8 fs9-bg fs9-radius-lg"
+              <a href=<%=`/quests/${questType}/${path.questName}` %> class="card-v8 fs9-bg fs9-radius-lg"
                 style="background-color: #434c5f;">
                 <figure>
                   <img src=<%=path.questImg %> alt="Image description">

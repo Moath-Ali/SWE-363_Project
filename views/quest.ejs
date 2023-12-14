@@ -87,7 +87,45 @@
   <%- include('partials/loader.ejs') %>
 
     <section class='hc4-position-relative hc4-z-index-1 hc4-padding-y-xl'>
+      <% if(quests && quests.questArt){ %>
       <%- quests.questArt %>
+
+
+        <% }else{ %>
+      
+          <div class='hc4-container hc4-max-width-adaptive-md'>
+            <div class='hc4-margin-bottom-xl'>
+              <h1 class='hc4-text-center'> step.questName </h1>
+            </div>
+        
+            <ol class='hiw-list'>
+              <% for(step of steps){ %>
+              <li class='hiw-list__item'>
+                <div class='hiw-list__item-inner'>
+                  <div class='hiw-list__counter' aria-hidden='true'></div>
+          
+                  <div class='hc4-flex-grow'>
+                    <div class='hiw-list__content hc4-grid hc4-gap-md hc4-items-center@md'>
+                      <figure class='hc4-col-6@md'>
+                        <img class='hc4-block hc4-width-100%' src= <%=step.stepImg  %> alt='Image description'>
+                      </figure>
+              
+                      <div class='hc4-col-6@md'>
+                        <div class='hc4-text-component'>
+                          <h2 class='hc4-text-lg'> <%= step.stepTitle %> </h2>
+                          <p class='hc4-color-contrast-medium'> <%= step.stepContent %> </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <% } %>
+              
+            </ol>
+          </div>
+
+          <% } %>
     </section>
 </body>
 <script src="js/index.js"></script>
