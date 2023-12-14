@@ -1,82 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <%- include("partials/head.ejs") %>
     <link rel="stylesheet" href="/css/register.css">
     <title>Register</title>
 </head>
+
 <body>
-    
 
-
-
-
-
-
-
-
-
-  
-      
-  
-  
-  
-
-  
   <form class="login-form" action="/register" method="post">
-      <div class="lq2-text-component lq2-text-center lq2-margin-bottom-sm">
-        <h1>Sign Up</h1>
-        <p>To Discover your Appropriate Career Path.</p>
+    <div class="lq2-text-component lq2-text-center lq2-margin-bottom-sm">
+      <h1>Sign Up</h1>
+      <p>To Discover your Appropriate Career Path.</p>
+    </div>
+
+
+
+
+
+    <div class="lq2-margin-bottom-sm">
+      <label class="lq2-form-label lq2-margin-bottom-3xs" for="email">Email</label>
+      <input class="lq2-form-control lq2-width-100% lq2-backgroundcolor" type="email" name="email" id="email"
+        placeholder="email@myemail.com">
+    </div>
+
+    <div class="lq2-margin-bottom-sm">
+      <label class="lq2-form-label lq2-margin-bottom-3xs" for="userName">userName</label>
+      <input class="lq2-form-control lq2-width-100% lq2-backgroundcolor" type="" name="userName" id="userName"
+        placeholder="MarkJackson32">
+    </div>
+
+    <div class="lq2-margin-bottom-sm">
+      <div class="lq2-flex lq2-justify-between lq2-margin-bottom-3xs ">
+        <label class="lq2-form-label" for="password">Password</label>
       </div>
-    
-      
-    
-  
-    
-      <div class="lq2-margin-bottom-sm">
-        <label class="lq2-form-label lq2-margin-bottom-3xs" for="email">Email</label>
-        <input class="lq2-form-control lq2-width-100% lq2-backgroundcolor" type="email" name="email" id="email" placeholder="email@myemail.com">
-      </div>
 
-      <div class="lq2-margin-bottom-sm">
-        <label class="lq2-form-label lq2-margin-bottom-3xs" for="userName">userName</label>
-        <input class="lq2-form-control lq2-width-100% lq2-backgroundcolor" type="" name="userName" id="userName" placeholder="MarkJackson32">
-      </div>
-    
-      <div class="lq2-margin-bottom-sm">
-        <div class="lq2-flex lq2-justify-between lq2-margin-bottom-3xs ">
-          <label class="lq2-form-label" for="password">Password</label> 
-        </div>
-    
-        <input class="lq2-form-control lq2-width-100% lq2-backgroundcolor" type="password" name="password" id="password">
-      </div>
-    
-      <div class="lq2-margin-bottom-sm">
-        <button class="lq2-btn lq2-btn--primary lq2-btn--md lq2-width-100%" type="submit">Register</button>
-      </div>
-    
-      <div class="lq2-text-center">
-        <p class="lq2-text-sm">Already have an account? <a href="/login">Log in</a></p>
-      </div>
-   
-    </form>
-      
+      <input class="lq2-form-control lq2-width-100% lq2-backgroundcolor" type="password" name="password" id="password">
+    </div>
+
+    <div class="lq2-margin-bottom-sm">
+      <button class="lq2-btn lq2-btn--primary lq2-btn--md lq2-width-100%" type="submit">Register</button>
+    </div>
+
+    <div class="lq2-text-center">
+      <p class="lq2-text-sm">Already have an account? <a href="/login">Log in</a></p>
+    </div>
+
+  </form>
 
 
-
-
-
-
-
-<!--
+  <!--
 this is only a test for registration
 
 
 -->
 
 
-  
-
-
 </body>
+
 </html>

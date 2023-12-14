@@ -1,236 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include("partials/head.ejs") %>
+  <%- include("partials/head.ejs") %>
     <link rel="stylesheet" href="/css/loader.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/stories.css">
-    <link 
-  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
-  rel="stylesheet"  type='text/css'>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+      type='text/css'>
     <title>home</title>
 </head>
+
 <body>
-    <%- include("partials/loader.ejs") %>
-    <!-- <h1 id="h1">this is the main page </h1>
-    <a href="/modules/path.ejs">link</a> -->
+  <%- include("partials/loader.ejs") %>
+
     <header class="header mf1-position-relative js-header ">
-        <div class="header__container mf1-container mf1-max-width-lg">
-          <div class="header__logo">
-            <a class="header__logo" href="/">
+      <div class="header__container mf1-container mf1-max-width-lg">
+        <div class="header__logo">
+          <a class="header__logo" href="/">
+            DevPath
+          </a>
+        </div>
+
+        <div class="mf1-btn mf1-btn--subtle header__trigger js-header__trigger" aria-label="Toggle menu"
+          aria-expanded="false" aria-controls="header-nav">
+          <i class="header__trigger-icon" aria-hidden="true"></i>
+          <span>Menu</span>
+        </div>
+
+
+        <nav class="header__nav js-header__nav" id="header-nav" role="navigation" aria-label="Main">
+
+          <div class="header__nav-inner">
+
+            <ul class="header__list">
+              <li class="header__item"><a href="/" class="header__link">Home</a></li>
+              <li class="header__item"><a href="modules" class="header__link">Paths</a></li>
+              <li class="header__item"><a href="quests" class="header__link">Quests</a></li>
+              <li class="header__item"><a href="quiz-start" class="header__link">Quiz</a></li>
+              <li class="header__item"><a href="about-us" class="header__link">About us</a></li>
+              <li class="header__item"><a href="contact-us" class="header__link">Contact us</a></li>
+              <li class="header__item header__item--divider" aria-hidden="true"></li>
+              <% if(user!==undefined){%>
+
+                <div class="user-tag" onclick="display()">
+
+                  <i class="fa fa-user icon "></i>
+                  <span class="name-of-user"><%-user%></span>
+                  <div class="log-out-card" id="logout-card">
+                    <li class="header__item out-btn"><a href="logout"
+                        class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
+                  </div>
+                  <div class="log-out-btn-mob " id="logout-card">
+                    <li class="header__item out-btn"><a href="logout"
+                        class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
+                  </div>
+
+                </div>
+
+
+                <%}%>
+                  <%if(user===undefined){%>
+                    <li class="header__item"><a href="register" class="header__nav-btn mf1-btn mf1-btn--primary">Log
+                        in</a></li>
+
+                    <%}%>
+
+            </ul>
+          </div>
+        </nav>
+
+      </div>
+    </header>
+    <div class="log-out-card" id="user-tag">
+      <div class="log-out-btn">
+        <li class="header__item out-btn"><a href="logout" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a>
+        </li>
+      </div>
+    </div>
+    <div class="intro">
+      <div class="intro1">
+        <% if(datas!==undefined) {%>
+          <span class="first_intro"> Checkout the our content
+            <br>and learn more about
+            <br><b>
+              <%= datas %>
+            </b> </span>
+
+          <br>
+          <a href="modules"><button class="quiz_button mf1-btn btn-style">Paths</button></a>
+          <% } else{%>
+            <span class="first_intro"> Take the quiz <strong>NOW!</strong><br>and know the path <br>that is best for you
+              <%= datas %> </span>
+            <br>
+            <a href="quiz-start"><button class="quiz_button mf1-btn btn-style">Start!</button></a>
+            <%}%>
+
+      </div>
+      <img src="Resources/mainpage2.png">
+
+
+
+    </div>
+
+    <div class="introduction">
+      Welcome to DevPath, your compass in the vast landscape of Computer Science and Software Engineering!
+      Navigating the myriad career paths within these dynamic fields can be overwhelming, but fear not - DevPath is here
+      to guide you on your journey.
+    </div>
+
+
+
+
+    <div class="stories_main">
+      <span>
+        <span class="story_intro">
+          Check out some successfull stories <br>
+          and learn from them
+        </span>
+
+        <br>
+        <div class="stories">
+
+          <ol class="stories__list">
+            <li class="stories__story">
+              <a href="#0" class="stories__img-wrapper">
+                <figure>
+                  <img src="/Resources/cyber1.png" alt="Image description">
+                </figure>
+              </a>
+
+              <div class="stories__text sz3-text-component sz3-line-height-md sz3-text-gap-2xs">
+                <h4 class="stories__headline"><a href="/stories" style="margin: 20px 20px;">The Code Crusader: From
+                    Hacking to Securing</a></h4>
+
+              </div>
+            </li>
+
+          </ol>
+        </div>
+      </span>
+
+      <img src="Resources/mainpage3-removebg-preview.png">
+
+    </div>
+    <footer class="main-footer me6-position-relative me6-z-index-1 me6-padding-top-xl">
+      <div class="me6-container me6-max-width-lg">
+        <div class="me6-grid me6-gap-y-lg me6-gap-lg@lg">
+          <div class="me6-col-3@lg me6-order-2@lg me6-text-right@lg">
+            <a class="main-footer__logo" href="">
               DevPath
-              <!-- <svg width="104" height="30" viewBox="0 0 104 30"><title>Go to homepage</title><path d="M37.54 24.08V3.72h4.92v16.37h8.47v4zM60.47 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8 8 0 015.64-2.18 8.07 8.07 0 015.68 2.2 8.49 8.49 0 012 5.69 8.63 8.63 0 01-1.78 5.38 7.6 7.6 0 01-5.89 2.49zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.79 3-2.79 4.26.32 4.23 2.82 4.23zM95.49 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8.4 8.4 0 0111.31 0 8.43 8.43 0 012 5.69 8.6 8.6 0 01-1.77 5.38 7.6 7.6 0 01-5.89 2.51zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.8 3-2.8 4.26.31 4.23 2.83 4.23zM77.66 30c-5.74 0-7-3.25-7.23-4.52l4.6-.26c.41.91 1.17 1.41 2.76 1.41a2.45 2.45 0 002.82-2.53v-2.68a7 7 0 01-1.7 1.75 6.12 6.12 0 01-5.85-.08c-2.41-1.37-3-4.25-3-6.66 0-.89.12-3.67 1.45-5.42a5.67 5.67 0 014.64-2.4c1.2 0 3 .25 4.46 2.82V8.81h4.85v15.33a5.2 5.2 0 01-2.12 4.32A9.92 9.92 0 0177.66 30zm.15-9.66c2.53 0 2.81-2.69 2.81-3.91s-.31-4-2.81-4-2.81 2.8-2.81 4 .27 3.91 2.81 3.91zM55.56 3.72h9.81v2.41h-9.81z" fill="hsl(var(--mf1-color-contrast-higher-hsl))"/><circle cx="15" cy="15" r="15" fill="hsl(var(--mf1-color-primary-hsl))"/></svg> -->
             </a>
           </div>
-      
-          <div class="mf1-btn mf1-btn--subtle header__trigger js-header__trigger" aria-label="Toggle menu" aria-expanded="false" aria-controls="header-nav">
-            <i class="header__trigger-icon" aria-hidden="true"></i>
-            <span>Menu</span>
-          </div>
-          <!-- <div class="dropdown">
-            <li>
-              <a>
-                Home
-              </a>
-            </li>
-            <li>
-              <a>
-                Path
-              </a>
-            </li>
-            <li>
-              <a>
-                Quiz
-              </a>
-            </li>
-            <li>
-              <a>
-                About us
-              </a>
-            </li>
-            <li>
-              <a>
-                Contact us
-              </a>
-            </li>
-            <li class="header__item"><a href="#0" class="header__nav-btn mf1-btn mf1-btn--primary">Log in</a></li>
-          </div> -->
-          <!-- <button class="mf1-btn mf1-btn--subtle header__trigger js-header__trigger" aria-label="Toggle menu" aria-expanded="false" aria-controls="header-nav">
-            
-          </button> -->
-      
-          <nav class="header__nav js-header__nav" id="header-nav" role="navigation" aria-label="Main">
-            <!-- <input type="checkbox" id="Check">
-            <label for="Check">
-              <i class="fas fa-bars"></i>
-            </label> -->
-            <div class="header__nav-inner">
-              
-              <ul class="header__list">
-                <li class="header__item"><a href="/" class="header__link">Home</a></li>
-                <li class="header__item"><a href="modules" class="header__link">Paths</a></li>
-                <li class="header__item"><a href="quests" class="header__link">Quests</a></li>
-                <li class="header__item"><a href="quiz-start" class="header__link">Quiz</a></li>
-                <li class="header__item"><a href="about-us" class="header__link">About us</a></li>
-                <li class="header__item"><a href="contact-us" class="header__link">Contact us</a></li>
-                <li class="header__item header__item--divider" aria-hidden="true"></li>
-                <% if(user!== undefined){%>
 
-                    <div class="user-tag" onclick="display()">
-                        
-                        <i class="fa fa-user icon "></i>
-                        <span class="name-of-user"><%-user%></span>
-                        <div class="log-out-card" id="logout-card">
-                          <li class="header__item out-btn"><a href="logout" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
-                      </div>
-                      <div class="log-out-btn-mob " id="logout-card">
-                        <li class="header__item out-btn"><a href="logout" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
-                    </div>
-                        
-                    </div>
-                    
-                    
-                    <%}%>
-                    <%if(user===undefined){%>
-                        <li class="header__item"><a href="register" class="header__nav-btn mf1-btn mf1-btn--primary">Log in</a></li>
+          <nav class="me6-col-9@lg me6-order-1@lg">
+            <ul class="me6-grid me6-gap-y-lg me6-gap-lg@xs">
+              <li class="me6-col-6@xs me6-col-3@md">
+                <h4 class="me6-margin-bottom-sm me6-text-base@md "><a class="footer_link" href="about-us">About Us</a>
+                </h4>
 
-                        <%}%>
-                <!-- 
-                    
-                    <div class="user-logged-in">
-                        <i class="fa fa-user"></i>
-                        <span class="name-of-user"></span>
-                    </div>
-                  -->
-                 
-                <!-- <li class="header__item"><a><i class="fa-regular fa-user"></i></a></li> -->
-                <!-- <div class="ham_btn">
-                  <i class="fa-solid fa-bars"></i>
-                </div> -->
-                <!-- <li class="header__item"><a href="#0" class="header__nav-btn mf1-btn mf1-btn--primary">sign up</a></li> -->  
-              </ul>
-            </div>
-          </nav>
-          
-        </div>
-    </header>
-    <div class="log-out-card"id="user-tag">
-        <div class="log-out-btn">
-            <li class="header__item out-btn"><a href="logout" class="header__nav-btn mf1-btn mf1-btn--primary">Log out</a></li>
-        </div>
-    </div>
-      <div class="intro">
-        <div class="intro1">
-          <% if(datas!== undefined) {%>
-            <span class="first_intro"> Checkout the our content  
-              <br>and learn more about 
-              <br><b><%= datas %></b> </span>
-          <!-- <P class="second_intro"> </P>
-          <div></div>
-          <p class="third_intro"></p>
-          <div></div> -->
-          <br>
-          <a href="modules"><button class="quiz_button mf1-btn btn-style">Paths</button></a> 
-            <% } else{%>
-              <span class="first_intro"> Take the quiz <strong>NOW!</strong><br>and know the path <br>that is best for you<%= datas %> </span>
-              <!-- <P class="second_intro"> </P>
-              <div></div>
-              <p class="third_intro"></p>
-              <div></div> -->
-              <br>
-              <a href="quiz-start"><button class="quiz_button mf1-btn btn-style">Start!</button></a>
-              <%}%>
-           
-        </div>
-        <img src="Resources/mainpage2.png" >
-        
-        
-        
-      </div>
-
-      <div class="introduction">
-           Welcome to DevPath, your compass in the vast landscape of Computer Science and Software Engineering!
-           Navigating the myriad career paths within these dynamic fields can be overwhelming, but fear not - DevPath is here to guide you on your journey.
-      </div>
-    
-      
-  
-  
-      <div class="stories_main">
-        <span>
-          <span class="story_intro">
-            Check out some successfull stories <br>
-            and learn from them 
-          </span>
-          
-          <br>
-          <div class="stories">
-            
-            <ol class="stories__list">
-              <li class="stories__story">
-                <a href="#0" class="stories__img-wrapper">
-                  <figure>
-                    <img src="/Resources/cyber1.png" alt="Image description">
-                  </figure>
-                </a>
-          
-                <div class="stories__text sz3-text-component sz3-line-height-md sz3-text-gap-2xs">
-                  <h4 class="stories__headline"><a href="/stories" style="margin: 20px 20px;">The Code Crusader: From Hacking to Securing</a></h4>
-                  
-                </div>
               </li>
-            
-            </ol>
-          </div>
-        </span>
-        
-        <img src="Resources/mainpage3-removebg-preview.png" >
-      
-      </div>
-      <footer class="main-footer me6-position-relative me6-z-index-1 me6-padding-top-xl">
-        <div class="me6-container me6-max-width-lg">
-          <div class="me6-grid me6-gap-y-lg me6-gap-lg@lg">
-            <div class="me6-col-3@lg me6-order-2@lg me6-text-right@lg">
-              <a class="main-footer__logo" href="">
-                DevPath
-                <!-- <svg width="104" height="30" viewBox="0 0 104 30"><title>Go to homepage</title><path d="M37.54 24.08V3.72h4.92v16.37h8.47v4zM60.47 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8 8 0 015.64-2.18 8.07 8.07 0 015.68 2.2 8.49 8.49 0 012 5.69 8.63 8.63 0 01-1.78 5.38 7.6 7.6 0 01-5.89 2.49zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.79 3-2.79 4.26.32 4.23 2.82 4.23zM95.49 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8.4 8.4 0 0111.31 0 8.43 8.43 0 012 5.69 8.6 8.6 0 01-1.77 5.38 7.6 7.6 0 01-5.89 2.51zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.8 3-2.8 4.26.31 4.23 2.83 4.23zM77.66 30c-5.74 0-7-3.25-7.23-4.52l4.6-.26c.41.91 1.17 1.41 2.76 1.41a2.45 2.45 0 002.82-2.53v-2.68a7 7 0 01-1.7 1.75 6.12 6.12 0 01-5.85-.08c-2.41-1.37-3-4.25-3-6.66 0-.89.12-3.67 1.45-5.42a5.67 5.67 0 014.64-2.4c1.2 0 3 .25 4.46 2.82V8.81h4.85v15.33a5.2 5.2 0 01-2.12 4.32A9.92 9.92 0 0177.66 30zm.15-9.66c2.53 0 2.81-2.69 2.81-3.91s-.31-4-2.81-4-2.81 2.8-2.81 4 .27 3.91 2.81 3.91zM55.56 3.72h9.81v2.41h-9.81z" fill="hsl(var(--me6-color-contrast-higher-hsl))"/><circle cx="15" cy="15" r="15" fill="hsl(var(--me6-color-primary-hsl))"/></svg> -->
-              </a>
-            </div>
-            
-            <nav class="me6-col-9@lg me6-order-1@lg">
-              <ul class="me6-grid me6-gap-y-lg me6-gap-lg@xs">
-                <li class="me6-col-6@xs me6-col-3@md">
-                  <h4 class="me6-margin-bottom-sm me6-text-base@md "><a class="footer_link" href="about-us">About Us</a></h4>
-                 
-                </li>
-      
-                <li class="me6-col-6@xs me6-col-3@md">
-                  <h4 class="me6-margin-bottom-sm me6-text-base@md"><a class="footer_link" href="contact-us">Contact Us</a></h4>
-                  
-                </li>
-              </ul>
-            </nav>
-          </div>
-        
-          <div class="me6-flex me6-flex-column me6-border-top me6-padding-y-xs me6-margin-top-lg me6-flex-row@md me6-justify-between@md me6-items-center@md">
-            <div class="me6-margin-bottom-sm me6-margin-bottom-0@md">
-              <div class="me6-text-sm me6-text-xs@md me6-color-contrast-medium me6-flex me6-flex-wrap me6-gap-xs">
-                <span>&copy; 2023 DevPath</span>
-              </div>
-            </div>
-      
-            
-          </div>
+
+              <li class="me6-col-6@xs me6-col-3@md">
+                <h4 class="me6-margin-bottom-sm me6-text-base@md"><a class="footer_link" href="contact-us">Contact
+                    Us</a></h4>
+
+              </li>
+            </ul>
+          </nav>
         </div>
-      </footer>
-      
+
+        <div
+          class="me6-flex me6-flex-column me6-border-top me6-padding-y-xs me6-margin-top-lg me6-flex-row@md me6-justify-between@md me6-items-center@md">
+          <div class="me6-margin-bottom-sm me6-margin-bottom-0@md">
+            <div class="me6-text-sm me6-text-xs@md me6-color-contrast-medium me6-flex me6-flex-wrap me6-gap-xs">
+              <span>&copy; 2023 DevPath</span>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </footer>
 
 
 
 
 
-     
-    </body>
-    <script src="js/index.js"></script>
-    <script src="/js/screen-saver.js"></script>
+
+
+</body>
+<script src="js/index.js"></script>
+<script src="/js/screen-saver.js"></script>
+
 </html>

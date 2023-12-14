@@ -1,12 +1,3 @@
-/* -------------------------------- 
-
-File#: _1_404
-Title: 404
-Descr: 404 error section
-Usage: codyhouse.co/license
-
--------------------------------- */
-
 /* reset */
 *,
 *::after,
@@ -188,6 +179,6 @@ svg {
     max-width: 48rem;
 }
 
-a{
+a {
     color: #bbc5d8;
 }

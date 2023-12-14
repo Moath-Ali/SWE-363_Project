@@ -1,77 +1,83 @@
 /* Custom styles for the textarea */
 textarea {
-    width: 400px;
-    height: 200px;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f4f4f4;
-    resize: none; /* Disable resizing */
-    overflow: auto; /* Enable scrolling */
-    transition: border-color 0.3s ease;
-  }
-  
-  /* Hover state */
-  textarea:hover {
-    border-color: #999;
-  }
-  
-  /* Focus state */
-  textarea:focus {
-    outline: none;
-    border-color: #66afe9;
-    box-shadow: 0 0 0 2px rgba(102, 175, 233, 0.6);
-  }
-  
-  /* Placeholder text */
-  textarea::placeholder {
-    color: #999;
-  }
-  
-  /* Disabled state */
-  textarea:disabled {
-    background-color: #eee;
-    cursor: not-allowed;
-  }
-  
-  /* Main color customization */
-  textarea {
-    border-color: #2E3440;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  textarea:hover {
-    border-color: #999;
-  }
+  width: 400px;
+  height: 200px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  resize: none;
+  /* Disable resizing */
+  overflow: auto;
+  /* Enable scrolling */
+  transition: border-color 0.3s ease;
+}
+
+/* Hover state */
+textarea:hover {
+  border-color: #999;
+}
+
+/* Focus state */
+textarea:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 0 2px rgba(102, 175, 233, 0.6);
+}
+
+/* Placeholder text */
+textarea::placeholder {
+  color: #999;
+}
+
+/* Disabled state */
+textarea:disabled {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+/* Main color customization */
+textarea {
+  border-color: #2E3440;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+textarea:hover {
+  border-color: #999;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 150px;
+  padding: 20px;
+  margin-right: 95px;
+  background: #0d6d8c;
+  font-size: 100%;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: transform 300ms 0s cubic-bezier(0, 0.23, 0.29, 2.45);
+}
+
+.submit:hover {
+  cursor: pointer;
+  background: #2d8cab;
+  transform: translateY(-2px);
+}
+
+@media (max-width:430px) {
   .submit {
-    border: none;
-    outline: none;
-    color: #fff;
-    width: 150px;
-    padding: 20px;
-    margin-right: 95px;
-    background: #0d6d8c;
-    font-size: 100%;
-    font-weight: 600;
-    border-radius: 6px;
-    transition: transform 300ms 0s cubic-bezier(0, 0.23, 0.29, 2.45);
+    width: 100px;
   }
+
   .submit:hover {
     cursor: pointer;
     background: #2d8cab;
     transform: translateY(-2px);
   }
-  @media (max-width:430px){
-    .submit{
-      width: 100px;
-    }
-    .submit:hover {
-      cursor: pointer;
-      background: #2d8cab;
-      transform: translateY(-2px);
-    }
-  }
+}

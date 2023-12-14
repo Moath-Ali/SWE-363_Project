@@ -15,52 +15,7 @@
     <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
     </div>
-    <!-- <div class="card">
-        <section class="question-card">
-            <div class="question-num">
-                ## out of ##
-            </div>
-            
 
-            <span class="question">
-                this is question 
-            </span>
-           
-            
-            <span class="answers">
-                <span class="p">
-                    Strongly disagree
-                </span>
-                <div id="radios">
-                    
-                    <label for="input1"></label>
-                    <input  id="input1" name="radio" type="radio" />
-                    <label for="input2"></label>
-                    <input  id="input2" name="radio" type="radio" />
-                    <label for="input3"></label>
-                    <input  id="input3" name="radio" type="radio" />
-                    <label for="input4"></label>
-                    <input  id="input4" name="radio" type="radio" />
-                    <label for="input5"></label>
-                    <input  id="input5" name="radio" type="radio" />
-                    
-                    <span id="slider"></span>
-                </div>
-                <span class="p">
-                    Strongly agree
-                </span>
-            </span>
-            <div class="buttons">
-                <button class="mf1-btn qbtn1">
-                    Previous
-                </button>
-                <button class="mf1-btn qbtn2">
-                    Next
-                </button>
-            </div>
-            
-        </section>
-    </div> -->
 
     <div class="quiz-container">
         <% for(q of listOfQuest){ %>
@@ -79,16 +34,14 @@
             <% } %>
                 <% if(q.Qno===19) {%>
                     <div class="quiz-btn">
-                        <!-- <form action="">
-                            <input type="text" name="FuckT" hidden>
-                        </form> -->
-                        <a  id="subt"><button class="mf1-btn sub-btn" onclick="calc()">Submit</button></a>
+
+                        <a id="subt"><button class="mf1-btn sub-btn" onclick="calc()">Submit</button></a>
                     </div>
 
                     <% } %>
-                   
 
-                    
+
+
     </div>
     <div class="top-cont"><a href="#" class="top">Back to Top &#8593;</a></div>
 

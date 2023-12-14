@@ -22,17 +22,18 @@ h4 {
     font-weight: 700;
 }
 
-a{
+a {
     color: #bbc5d8;
 }
 
-.hc4-container{
+.hc4-container {
     background-color: #373c46;
     padding: 30px;
     border: solid 1px #373c46;
     border-radius: 30px;
 }
-.admin_form{
+
+.admin_form {
     margin: 0 auto;
     width: 100%;
     display: flex;
@@ -45,10 +46,11 @@ a{
 
 
 
-.hiw-list__counter{
+.hiw-list__counter {
     color: whitesmoke;
     border-color: whitesmoke;
 }
-.ao7-text-component__block img{
+
+.ao7-text-component__block img {
     margin: 0 auto;
 }

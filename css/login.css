@@ -1,12 +1,4 @@
 
-/* -------------------------------- 
-
-File#: _1_login-form
-Title: Login Form
-Descr: Login form template
-Usage: codyhouse.co/license
-
--------------------------------- */
 /* reset */
 *, *::after, *::before {
     box-sizing: border-box;
@@ -204,7 +196,7 @@ Usage: codyhouse.co/license
   }
   
   .lq2-btn--subtle:focus {
-    box-shadow: inset 0px 1px 0px hsla(var(--lq2-color-white-hsl), 0.1), 0px 0px 0px 1px hsla(var(--lq2-color-black-hsl), 0.02), 0px 1px 3px -1px hsla(var(--lq2-color-black-hsl), 0.2), 0 0.1px 0.3px rgba(0, 0, 0, 0.06),0 1px 2px rgba(0, 0, 0, 0.12), 0px 0px 0px 2px hsl(var(--lq2-color-bg-hsl)), 0px 0px 0px 4px hsl(var(--lq2-color-contrast-high-hsl));
+    box-shadow: inset 0px 1px[] 0px hsla(var(--lq2-color-white-hsl), 0.1), 0px 0px 0px 1px hsla(var(--lq2-color-black-hsl), 0.02), 0px 1px 3px -1px hsla(var(--lq2-color-black-hsl), 0.2), 0 0.1px 0.3px rgba(0, 0, 0, 0.06),0 1px 2px rgba(0, 0, 0, 0.12), 0px 0px 0px 2px hsl(var(--lq2-color-bg-hsl)), 0px 0px 0px 4px hsl(var(--lq2-color-contrast-high-hsl));
   }
   
   .lq2-btn--md {

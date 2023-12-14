@@ -1,43 +1,45 @@
-.loader_cont{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color:  #2E3440;
-    display: flex;
+.loader_cont {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2E3440;
+  display: flex;
 
-    animation-duration: 3s;
-    animation-name: loader_cont;
-    animation-fill-mode: forwards;
+  animation-duration: 3s;
+  animation-name: loader_cont;
+  animation-fill-mode: forwards;
 }
+
 @keyframes loader_cont {
-    from {
-      opacity: 1;
-    }
-  
-    to {
-      opacity: 0;
-      display: none;
-    }
-    
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    display: none;
+  }
+
 }
 
-body *:not(.loader_cont,.loader,.loader-text,.load,.header__nav,.header__nav-inner,.header__list, .header__item , .header__link,.header__nav-btn,.log-out-card,.log-out-btn ){
-    opacity: 0;
-    animation-delay: 1s;
-    animation-duration: 2s;
-    animation-name: body;
-    animation-fill-mode: forwards;
+body *:not(.loader_cont, .loader, .loader-text, .load, .header__nav, .header__nav-inner, .header__list, .header__item, .header__link, .header__nav-btn, .log-out-card, .log-out-btn) {
+  opacity: 0;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-name: body;
+  animation-fill-mode: forwards;
 }
+
 @keyframes body {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 
@@ -160,7 +162,7 @@ body *:not(.loader_cont,.loader,.loader-text,.load,.header__nav,.header__nav-inn
     width: 16px;
   }
 }
- 
- .loader{
-    margin: auto auto;
- }
+
+.loader {
+  margin: auto auto;
+}

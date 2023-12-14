@@ -1,52 +1,59 @@
-body{
+body {
   background-color: #23272f;
   color: white;
   font-family: system-ui, sans-serif;
   font-size: 1.2rem;
 }
-.card{
+
+.card {
   background-color: #374151;
   border-radius: 50px;
   height: 400px;
   width: 500px;
-  
-  
+
+
 }
-button{
+
+button {
   border: none;
   background-color: #0d6d8c;
   padding: 10px 20px 10px 20px;
   border-radius: 5px;
   color: white;
 }
-h1{
+
+h1 {
   display: flex;
   justify-content: center;
 
 }
-p{
+
+p {
   display: flex;
   justify-content: center;
 
 }
+
 /* .start{
   display: flex;
   justify-content: end;
   align-items: end;
 } */
-.buttons{
+.buttons {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
   margin-top: 50px;
 }
-.card-disply{
+
+.card-disply {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 8%;
 
 }
+
 .mf1-btn {
   position: relative;
   display: inline-flex;
@@ -77,18 +84,22 @@ p{
 .mf1-btn:active {
   transform: translateY(2px);
 }
-.mf1-btn:hover{
+
+.mf1-btn:hover {
   box-shadow: rgba(255, 255, 255, 0.1) 0 4px 12px;
 }
-a{
+
+a {
   text-decoration: none;
   color: white;
 }
-@media (max-width:430px){
-  body{
+
+@media (max-width:430px) {
+  body {
     font-size: 1rem;
   }
-  .card{
+
+  .card {
     width: 90%;
     padding: 0px 10px 0px 10px;
     height: 375px;
